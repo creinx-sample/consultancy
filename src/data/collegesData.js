@@ -17,7 +17,7 @@ export const tnUniversitiesData = [
         name: "Saveetha Institute of Medical and Technical Sciences", 
         location: "Chennai", 
         courses: ["Medical", "Technical"], 
-        images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"],
+        images: ["https://logo.clearbit.com/saveetha.com"],
         website: "https://www.saveetha.com/"
       },
       { 
@@ -25,7 +25,7 @@ export const tnUniversitiesData = [
         name: "Shanmugha Arts Science Technology and Research Academy (SASTRA)", 
         location: "Thanjavur", 
         courses: ["Arts", "Science", "Technology"], 
-        images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"],
+        images: ["https://logo.clearbit.com/sastra.edu"],
         website: "https://www.sastra.edu/"
       },
       { 
@@ -33,7 +33,7 @@ export const tnUniversitiesData = [
         name: "Ponnaiyah Ramajayam Institute of Science and Technology", 
         location: "Thanjavur", 
         courses: ["Science", "Technology"], 
-        images: ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80"],
+        images: ["https://logo.clearbit.com/prist.ac.in"],
         website: "https://www.prist.ac.in/"
       },
       { 
@@ -41,7 +41,7 @@ export const tnUniversitiesData = [
         name: "Amrita Vishwa Vidyapeetham", 
         location: "Coimbatore", 
         courses: ["Engineering", "Science"], 
-        images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"],
+        images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Amrita_Vishwa_Vidyapeetham_coimbatore_campus.jpg/1280px-Amrita_Vishwa_Vidyapeetham_coimbatore_campus.jpg"],
         website: "https://www.amrita.edu/"
       },
       { 
@@ -80,7 +80,7 @@ export const tnUniversitiesData = [
         name: "Amrita Vishwa Vidyapeetham", 
         location: "Coimbatore", 
         courses: ["B.E", "B.Tech", "M.Tech"], 
-        images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"],
+        images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Amrita_Vishwa_Vidyapeetham_coimbatore_campus.jpg/1280px-Amrita_Vishwa_Vidyapeetham_coimbatore_campus.jpg"],
         website: "https://www.amrita.edu/"
       },
       { 
@@ -88,7 +88,7 @@ export const tnUniversitiesData = [
         name: "SASTRA University", 
         location: "Thanjavur", 
         courses: ["B.E", "B.Tech", "M.Tech"], 
-        images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"],
+        images: ["https://logo.clearbit.com/sastra.edu"],
         website: "https://www.sastra.edu/"
       },
       { 
@@ -96,7 +96,7 @@ export const tnUniversitiesData = [
         name: "Karunya Institute of Technology and Sciences", 
         location: "Coimbatore", 
         courses: ["B.E", "B.Tech", "M.Tech"], 
-        images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"],
+        images: ["https://logo.clearbit.com/karunya.edu"],
         website: "https://www.karunya.edu/"
       },
       { 
@@ -104,7 +104,7 @@ export const tnUniversitiesData = [
         name: "Kalasalingam Academy of Research and Education", 
         location: "Krishnankoil", 
         courses: ["B.E", "B.Tech", "M.Tech"], 
-        images: ["https://images.unsplash.com/photo-1513622470522-26cb3cad87c7?q=80"],
+        images: ["https://logo.clearbit.com/kalasalingam.ac.in"],
         website: "https://kalasalingam.ac.in/"
       }
     ]
@@ -127,7 +127,7 @@ export const tnUniversitiesData = [
         name: "Saveetha University", 
         location: "Chennai", 
         courses: ["B.Sc", "B.Com", "BBA", "BA"], 
-        images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"],
+        images: ["https://logo.clearbit.com/saveetha.com"],
         website: "https://www.saveetha.com/"
       },
       { 
@@ -135,7 +135,7 @@ export const tnUniversitiesData = [
         name: "Amrita Vishwa Vidyapeetham", 
         location: "Coimbatore", 
         courses: ["B.Sc", "B.Com", "BBA", "BA"], 
-        images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"],
+        images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Amrita_Vishwa_Vidyapeetham_coimbatore_campus.jpg/1280px-Amrita_Vishwa_Vidyapeetham_coimbatore_campus.jpg"],
         website: "https://www.amrita.edu/"
       },
       { 
@@ -143,7 +143,7 @@ export const tnUniversitiesData = [
         name: "SASTRA University", 
         location: "Thanjavur", 
         courses: ["B.Sc", "B.Com", "BBA", "BA"], 
-        images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"],
+        images: ["https://logo.clearbit.com/sastra.edu"],
         website: "https://www.sastra.edu/"
       },
       { 
@@ -166,7 +166,7 @@ export const tnUniversitiesData = [
         name: "Saveetha Institute of Medical and Technical Sciences", 
         location: "Chennai", 
         courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
-        images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80"],
+        images: ["https://logo.clearbit.com/saveetha.com"],
         website: "https://www.saveetha.com/"
       },
       { 
@@ -182,7 +182,7 @@ export const tnUniversitiesData = [
         name: "Chettinad Academy of Research and Education", 
         location: "Kelambakkam", 
         courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
-        images: ["https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80"],
+        images: ["https://logo.clearbit.com/care.edu.in"],
         website: "https://care.edu.in/"
       },
       { 
@@ -190,7 +190,7 @@ export const tnUniversitiesData = [
         name: "Sri Ramachandra Institute of Higher Education and Research", 
         location: "Chennai", 
         courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
-        images: ["https://images.unsplash.com/photo-1621360841013-c76831f1628c?q=80"],
+        images: ["https://logo.clearbit.com/sriramachandra.edu.in"],
         website: "https://www.sriramachandra.edu.in/"
       }
     ]
@@ -213,7 +213,7 @@ export const tnUniversitiesData = [
         name: "Saveetha University", 
         location: "Chennai", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80"],
+        images: ["https://logo.clearbit.com/saveetha.com"],
         website: "https://www.saveetha.com/"
       },
       { 
@@ -221,7 +221,7 @@ export const tnUniversitiesData = [
         name: "JSS College of Pharmacy Ooty", 
         location: "Ooty", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"],
+        images: ["https://logo.clearbit.com/jssuni.edu.in"],
         website: "https://jssuni.edu.in/"
       },
       { 
@@ -229,7 +229,7 @@ export const tnUniversitiesData = [
         name: "Kalasalingam Academy of Research and Education", 
         location: "Krishnankoil", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["https://images.unsplash.com/photo-1513622470522-26cb3cad87c7?q=80"],
+        images: ["https://logo.clearbit.com/kalasalingam.ac.in"],
         website: "https://kalasalingam.ac.in/"
       }
     ]
@@ -244,7 +244,7 @@ export const tnUniversitiesData = [
         name: "Saveetha School of Law", 
         location: "Chennai", 
         courses: ["LLB", "BA LLB", "BBA LLB"], 
-        images: ["https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80"],
+        images: ["https://logo.clearbit.com/saveetha.com"],
         website: "https://www.saveetha.com/"
       },
       { 
@@ -260,7 +260,7 @@ export const tnUniversitiesData = [
         name: "SASTRA University School of Law", 
         location: "Thanjavur", 
         courses: ["LLB", "BA LLB", "BBA LLB"], 
-        images: ["https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80"],
+        images: ["https://logo.clearbit.com/sastra.edu"],
         website: "https://www.sastra.edu/"
       },
       { 
@@ -278,14 +278,14 @@ export const tnUniversitiesData = [
 export const countriesData = [
   {
     country: "Russia",
-    image: "https://images.unsplash.com/photo-1513622470522-26cb3cad87c7?q=80&w=2670&auto=format&fit=crop",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Saint_Basil%27s_Cathedral_%282020-06-25%29.jpg/1280px-Saint_Basil%27s_Cathedral_%282020-06-25%29.jpg",
     highlights: ["NMC & WHO Approved", "World-class infrastructure", "Affordable Fee Structure", "English Medium Curriculum"],
     medicalUniversities: [
-      { id: "kant-baltic", name: "Immanuel Kant Baltic Federal University", location: "Kaliningrad, Russia", images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"] },
-      { id: "mephi-moscow", name: "Medical Institute Of MEPhi, Moscow", location: "Moscow, Russia", images: ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80"] },
-      { id: "mephi-obninsk", name: "Medical Institute Of MEPhi, Obninsk", location: "Obninsk, Russia", images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"] },
+      { id: "kant-baltic", name: "Immanuel Kant Baltic Federal University", location: "Kaliningrad, Russia", images: ["https://logo.clearbit.com/kantiana.ru"] },
+      { id: "mephi-moscow", name: "Medical Institute Of MEPhi, Moscow", location: "Moscow, Russia", images: ["https://logo.clearbit.com/mephi.ru"] },
+      { id: "mephi-obninsk", name: "Medical Institute Of MEPhi, Obninsk", location: "Obninsk, Russia", images: ["https://logo.clearbit.com/mephi.ru"] },
       { id: "volgograd-medical", name: "Volgograd State Medical University", location: "Volgograd, Russia", images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Volgograd_State_Medical_University.jpg/1280px-Volgograd_State_Medical_University.jpg"] },
-      { id: "kazan-medical", name: "Kazan State Medical University", location: "Kazan, Russia", images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"] }
+      { id: "kazan-medical", name: "Kazan State Medical University", location: "Kazan, Russia", images: ["https://logo.clearbit.com/kazangmu.ru"] }
     ],
     engineeringUniversities: [
       { id: "mai-moscow", name: "Moscow State Aviation Institute (MAI)", location: "Moscow, Russia", images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/MAI_2025.png/1280px-MAI_2025.png"] },
@@ -294,11 +294,11 @@ export const countriesData = [
   },
   {
     country: "Georgia",
-    image: "https://images.unsplash.com/photo-1565018981254-8fb93e2b10ba?q=80&w=2670&auto=format&fit=crop",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Tbilisi_as_seen_from_Narikala.jpg/1280px-Tbilisi_as_seen_from_Narikala.jpg",
     highlights: ["High FMGE Passing Rate", "European Standard of Living", "No IELTS Required", "Safe & Secure Environment"],
     medicalUniversities: [
-      { id: "tbilisi-medical", name: "Tbilisi State Medical University", location: "Tbilisi, Georgia", images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"] },
-      { id: "batumi-rustaveli", name: "Batumi Shota Rustaveli State University", location: "Batumi, Georgia", images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"] }
+      { id: "tbilisi-medical", name: "Tbilisi State Medical University", location: "Tbilisi, Georgia", images: ["https://logo.clearbit.com/tsmu.edu"] },
+      { id: "batumi-rustaveli", name: "Batumi Shota Rustaveli State University", location: "Batumi, Georgia", images: ["https://logo.clearbit.com/bsu.edu.ge"] }
     ]
   }
 ];

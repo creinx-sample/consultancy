@@ -1,177 +1,73 @@
 export const tnUniversitiesData = [
   {
     category: "Multi-Disciplinary",
-    description: "Premium universities offering Engineering, Arts, Science, Law, Pharmacy, and Allied Health.",
+    description: "These universities offer Engineering + Arts + Science + Law + Pharmacy + Allied Health.",
     icon: "Award",
     colleges: [
-      { 
-        id: "vit-vellore",
-        name: "Vellore Institute of Technology (VIT)", 
-        location: "Vellore", 
-        features: "Pioneer of FFCS and top-ranking private university in India.",
-        images: ["/images/colleges/vit.jpg"],
-        about: "VIT is recognized globally as a leader in innovative higher education. It is famous for its 'Fully Flexible Credit System' (FFCS), which allows students to choose their own subjects and class timings.",
-        infrastructure: "Features high-tech smart classrooms, specialized artificial intelligence labs, athletic centers, and comprehensive hostel facilities.",
-        courses: ["B.Tech", "M.Tech", "B.Arch", "Law", "Management", "Science"],
-        highlights: ["Consistent Top Private University", "NAAC A++ Accredited", "Fully Flexible Credit System"]
-      },
-      { 
-        id: "srm-kattankulathur",
-        name: "SRM Institute of Science and Technology", 
-        location: "Kattankulathur", 
-        features: "Ranked highly with a robust global Semester Abroad Program.",
-        images: ["/images/colleges/srm.jpg"],
-        about: "SRMIST is a leading higher education institute, recognized for its Semester Abroad Program (SAP), allowing students to spend a semester at partner international universities.",
-        infrastructure: "The 250-acre main campus is a self-contained academic city, featuring a 15-storey library, advanced labs, and widespread hospital facilities.",
-        courses: ["B.Tech", "MBBS", "B.Arch", "MBA", "Law", "Agriculture"],
-        highlights: ["Semester Abroad Program (SAP)", "NAAC A++ Grade", "Extensive International Partners"]
-      },
-      { 
-        id: "sathyabama-chennai",
-        name: "Sathyabama Institute of Science and Technology", 
-        location: "Chennai", 
-        features: "Category 1 University by UGC with a strong focus on space research.",
-        images: ["/images/colleges/sathyabama.jpg"],
-        about: "A multi-disciplinary, research-intensive deemed university established in 1987. Known for successful student-led satellite launches (SathyabamaSat) and robust industry collaborations.",
-        infrastructure: "State-of-the-art campus featuring advanced research centers, modern academic blocks, and extensive sports facilities.",
-        courses: ["Engineering", "Architecture", "Management", "Pharmacy", "Dental", "Arts & Science"],
-        highlights: ["NAAC A++ Accreditation", "Category 1 University", "Active Space Research Initiatives"]
-      },
-      { 
-        id: "vels-chennai",
-        name: "Vels University (VISTAS)", 
-        location: "Chennai", 
-        features: "Over 100 diverse programs with strong placement records.",
-        images: ["/images/colleges/vels.jpg"],
-        about: "A deemed-to-be-university offering over 100 programs. It emphasizes interdisciplinary learning, rigorous academic training, and excellent industry placements.",
-        infrastructure: "Modern infrastructure encompassing advanced laboratories, extensive library resources, and dedicated maritime academies.",
-        courses: ["B.Tech", "MBA", "Law", "Pharmacy", "Maritime Studies"],
-        highlights: ["NAAC A++ Accreditation", "Category-I Status", "Interdisciplinary Learning Approach"]
-      },
-      { 
-        id: "dhanalakshmi-srinivasan-trichy",
-        name: "Dhanalakshmi Srinivasan University", 
-        location: "Trichy", 
-        features: "A modern multi-disciplinary university emphasizing real-world applications.",
-        images: ["/images/colleges/dsu.jpg"],
-        about: "Established under the Tamil Nadu Private Universities Act, it brings together medical, engineering, nursing, agriculture, and arts & science disciplines under one roof.",
-        infrastructure: "Expansive green campus in Samayapuram with integrated residential facilities, teaching hospital, and modern laboratories.",
-        courses: ["Medicine", "Engineering", "Nursing", "Allied Health", "Agricultural Sciences", "Arts & Science"],
-        highlights: ["Comprehensive Multi-disciplinary Campus", "Integrated Medical College", "Green and Modern Infrastructure"]
-      },
-      { 
-        id: "vinayaka-missions-salem",
-        name: "Vinayaka Mission's Research Foundation", 
-        location: "Salem", 
-        features: "Pioneering medical and technical education across multiple campuses since 1981.",
-        images: ["/images/colleges/vmrf.jpg"],
-        about: "A prominent deemed-to-be university providing wide-ranging academic programs in medicine, dentistry, paramedical sciences, engineering, and humanities.",
-        infrastructure: "Equipped with comprehensive hospital facilities, advanced dental clinics, research labs, and digital libraries.",
-        courses: ["MBBS", "BDS", "B.E./B.Tech", "Paramedical", "Pharmacy", "Management"],
-        highlights: ["Established Healthcare Education Legacy", "Vast Alumni Network", "Multiple Specialized Institutions"]
-      },
-      { 
-        id: "karpagam-coimbatore",
-        name: "Karpagam Academy of Higher Education", 
-        location: "Coimbatore", 
-        features: "Industry-aligned academic programs supported by TCS and other corporate partners.",
-        images: ["/images/colleges/karpagam.jpg"],
-        about: "A renowned institution in Coimbatore providing comprehensive education in engineering, arts, science, and pharmacy, heavily focused on employability.",
-        infrastructure: "Features industry-sponsored cognitive systems labs, modern architecture, and extensive research facilities.",
-        courses: ["Engineering", "Architecture", "Pharmacy", "Management", "Science & Humanities"],
-        highlights: ["NAAC Accredited", "TCS Integrated Programs", "Research and Innovation Driven"]
-      }
+      { id: "srm-ist", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["Engineering", "Arts", "Science", "Law", "Pharmacy"] },
+      { id: "saveetha-simats", name: "Saveetha Institute of Medical and Technical Sciences", location: "Chennai", courses: ["Medical", "Technical"] },
+      { id: "sastra", name: "Shanmugha Arts Science Technology and Research Academy (SASTRA)", location: "Thanjavur", courses: ["Arts", "Science", "Technology"] },
+      { id: "prist", name: "Ponnaiyah Ramajayam Institute of Science and Technology", location: "Thanjavur", courses: ["Science", "Technology"] },
+      { id: "amrita", name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore", courses: ["Engineering", "Science"] },
+      { id: "vit", name: "Vellore Institute of Technology", location: "Vellore", courses: ["Engineering", "Science"] }
     ]
   },
   {
     category: "Engineering",
-    description: "Top-ranked institutions focused strictly on technical education and research.",
+    description: "Top-ranked in placements & NIRF rankings.",
     icon: "Cpu",
     colleges: [
-      { 
-        id: "srm-trichy", 
-        name: "SRM Institute of Science and Technology (Trichy Campus)", 
-        location: "Trichy", 
-        features: "A rapidly growing future-focused technical campus backed by SRM's legacy.",
-        images: ["/images/colleges/srm.jpg"],
-        about: "Situated on the Trichy-Chennai highway, this campus focuses intensely on modern technical and management education with global standards.",
-        infrastructure: "New age academic blocks, state-of-the-art computer labs, and modern student hostels.",
-        courses: ["B.Tech", "M.Tech", "MBA", "Science & Humanities"],
-        highlights: ["Backed by SRM Group Legacy", "Modern Technical Infrastructure", "Strong Placement Cell"]
-      },
-      { 
-        id: "jeppiaar-chennai", 
-        name: "Jeppiaar Engineering College / University", 
-        location: "Chennai", 
-        features: "Carrying forward a strong legacy of affordable technical education and discipline.",
-        images: ["/images/colleges/jeppiaar.jpg"],
-        about: "Known for discipline, holistic student development, and a legacy of producing quality engineers for the core and IT sectors.",
-        infrastructure: "Vast campus with specialized technical labs, central library, and large-scale sports amenities.",
-        courses: ["Computer Science", "Mechanical", "Electronics", "Information Technology", "MBA"],
-        highlights: ["Strong Alumni Network", "Discipline and Holistic Focus", "Excellent Industry Linkages"]
-      },
-      { 
-        id: "sri-ramakrishna-engineering", 
-        name: "Sri Ramakrishna Engineering College (SREC)", 
-        location: "Coimbatore", 
-        features: "Autonomous institution known for niche technical specializations and innovation.",
-        images: ["/images/colleges/sri_ramakrishna.jpg"],
-        about: "An autonomous engineering college offering specialized courses in emerging fields like Artificial Intelligence, Nanoscience, and Robotics.",
-        infrastructure: "Advanced technical laboratories, innovation incubation centers, and a highly resourceful central library.",
-        courses: ["B.E./B.Tech", "M.E./M.Tech", "MBA", "Ph.D Programs"],
-        highlights: ["Autonomous Status", "Emerging Tech Specializations", "Strong Entrepreneurship Cell"]
-      },
-      { 
-        id: "pgp-engineering", 
-        name: "PGP College of Engineering and Technology", 
-        location: "Namakkal", 
-        features: "Quality technical education promoting merit-based learning and rural empowerment.",
-        images: ["/images/colleges/pgp.jpg"],
-        about: "Offers a range of core and IT-related engineering programs aiming to provide accessible, high-quality technical education.",
-        infrastructure: "Well-established engineering workshops, computing centers, and distinct residential facilities.",
-        courses: ["B.E.", "B.Tech", "M.E.", "MCA"],
-        highlights: ["Merit-based Scholarships", "Experienced Faculty Core", "Focused Technical Skill Development"]
-      },
-      { 
-        id: "shree-venkateshwara-gobi", 
-        name: "Shree Venkateshwara Hi-Tech Engineering College", 
-        location: "Gobichettipalayam", 
-        features: "Modern technical methodologies and solid industry-aligned curriculum.",
-        images: ["/images/colleges/venkateshwara.jpg"],
-        about: "Committed to delivering hands-on technical education, aiming to bridge the gap between academia and industrial expectations.",
-        infrastructure: "Practical learning setups, fully equipped machinery labs, and secure accommodations.",
-        courses: ["B.E. (CSE, AI & DS, Civil)", "M.E.", "Management Studies"],
-        highlights: ["Industry Aligned Curriculum", "Practical Learning Focus", "Strategic Academic Growth"]
-      }
+      { id: "vit-eng", name: "Vellore Institute of Technology", location: "Vellore", courses: ["B.E", "B.Tech", "M.Tech"] },
+      { id: "srm-eng", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["B.E", "B.Tech", "M.Tech"] },
+      { id: "amrita-eng", name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore", courses: ["B.E", "B.Tech", "M.Tech"] },
+      { id: "sastra-eng", name: "SASTRA University", location: "Thanjavur", courses: ["B.E", "B.Tech", "M.Tech"] },
+      { id: "karunya-eng", name: "Karunya Institute of Technology and Sciences", location: "Coimbatore", courses: ["B.E", "B.Tech", "M.Tech"] },
+      { id: "kalasalingam-eng", name: "Kalasalingam Academy of Research and Education", location: "Krishnankoil", courses: ["B.E", "B.Tech", "M.Tech"] }
     ]
   },
   {
     category: "Arts & Science",
-    description: "Leading institutions for B.Sc, B.Com, BBA, and specialized humanities courses.",
+    description: "Tamil Nadu has a strong arts & science ecosystem with high rankings nationally.",
     icon: "Book",
     colleges: [
-      { 
-        id: "sri-ramakrishna-arts", 
-        name: "Sri Ramakrishna College of Arts & Science", 
-        location: "Coimbatore", 
-        features: "Nationally recognized, offering industry-integrated coursework alongside TCS.",
-        images: ["/images/colleges/sri_ramakrishna.jpg"],
-        about: "A premier arts and science college in the region, highly sought after for its commerce, computing, and management under-graduate paths.",
-        infrastructure: "Smart classrooms, digital commerce labs, and a vibrant student campus environment.",
-        courses: ["B.Com", "B.Sc Computing", "BBA", "Visual Communication", "M.Sc"],
-        highlights: ["TCS Industry Integration", "Autonomous Institution", "Excellent Soft-skills Training"]
-      },
-      { 
-        id: "rvs-arts-science", 
-        name: "RVS College of Arts and Science", 
-        location: "Coimbatore", 
-        features: "NAAC A+ accredited multidisciplinary campus with strong corporate ties.",
-        images: ["/images/colleges/rvs.jpg"],
-        about: "A widely respected institution offering holistic arts, science, commerce, and advanced research (M.Phil./Ph.D.) opportunities.",
-        infrastructure: "Features exclusive 'IDEA Labs' for innovation, extensive life sciences labs, and great sporting grounds.",
-        courses: ["Life Sciences", "Computer Science", "Commerce", "Management Studies"],
-        highlights: ["NAAC A+ Accreditation", "Innovation and Design IDEA Labs", "Strong Placement Record"]
-      }
+      { id: "srm-arts", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["B.Sc", "B.Com", "BBA", "BA"] },
+      { id: "saveetha-arts", name: "Saveetha University", location: "Chennai", courses: ["B.Sc", "B.Com", "BBA", "BA"] },
+      { id: "amrita-arts", name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore", courses: ["B.Sc", "B.Com", "BBA", "BA"] },
+      { id: "sastra-arts", name: "SASTRA University", location: "Thanjavur", courses: ["B.Sc", "B.Com", "BBA", "BA"] },
+      { id: "sriramakrishna-arts", name: "Sri Ramakrishna College of Arts and Science", location: "Coimbatore", courses: ["B.Sc", "B.Com", "BBA", "BA"] }
+    ]
+  },
+  {
+    category: "Medical / Allied Health",
+    description: "Provide hospital-based training & clinical exposure.",
+    icon: "Activity",
+    colleges: [
+      { id: "saveetha-med", name: "Saveetha Institute of Medical and Technical Sciences", location: "Chennai", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"] },
+      { id: "srm-med", name: "SRM Medical College Hospital and Research Centre", location: "Chennai", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"] },
+      { id: "chettinad-med", name: "Chettinad Academy of Research and Education", location: "Kelambakkam", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"] },
+      { id: "sriramachandra-med", name: "Sri Ramachandra Institute of Higher Education and Research", location: "Chennai", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"] }
+    ]
+  },
+  {
+    category: "Pharmacy",
+    description: "Top Private Pharmacy Universities.",
+    icon: "Crosshair",
+    colleges: [
+      { id: "srm-pharm", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["B.Pharm", "M.Pharm", "Pharm.D"] },
+      { id: "saveetha-pharm", name: "Saveetha University", location: "Chennai", courses: ["B.Pharm", "M.Pharm", "Pharm.D"] },
+      { id: "jss-pharm", name: "JSS College of Pharmacy Ooty", location: "Ooty", courses: ["B.Pharm", "M.Pharm", "Pharm.D"] },
+      { id: "kalasalingam-pharm", name: "Kalasalingam Academy of Research and Education", location: "Krishnankoil", courses: ["B.Pharm", "M.Pharm", "Pharm.D"] }
+    ]
+  },
+  {
+    category: "Law",
+    description: "Top Law Universities (Private).",
+    icon: "Briefcase",
+    colleges: [
+      { id: "saveetha-law", name: "Saveetha School of Law", location: "Chennai", courses: ["LLB", "BA LLB", "BBA LLB"] },
+      { id: "srm-law", name: "SRM School of Law", location: "Chennai", courses: ["LLB", "BA LLB", "BBA LLB"] },
+      { id: "sastra-law", name: "SASTRA University School of Law", location: "Thanjavur", courses: ["LLB", "BA LLB", "BBA LLB"] },
+      { id: "vit-law", name: "VIT School of Law", location: "Vellore", courses: ["LLB", "BA LLB", "BBA LLB"] }
     ]
   }
 ];

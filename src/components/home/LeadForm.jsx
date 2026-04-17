@@ -40,7 +40,7 @@ const LeadForm = () => {
 `;
 
     const encodedMessage = encodeURIComponent(message.trim());
-    const phoneNumber = "919876543210"; 
+    const phoneNumber = "919597371949"; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
     window.open(whatsappUrl, '_blank');

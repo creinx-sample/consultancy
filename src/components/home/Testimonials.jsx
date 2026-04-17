@@ -7,7 +7,7 @@ const Testimonials = () => {
       name: "Arjun M.",
       course: "MBBS, Georgia",
       image: "https://i.pravatar.cc/150?img=11",
-      feedback: "I was extremely confused after my NEET results. EduGateway guided me through the entire process and helped me secure a seat in Georgia. Their transparency and step-by-step assistance are unmatched."
+      feedback: "I was extremely confused after my NEET results. TNAEC guided me through the entire process and helped me secure a seat in Georgia. Their transparency and step-by-step assistance are unmatched."
     },
     {
       name: "Sneha K.",

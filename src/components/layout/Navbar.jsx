@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <GraduationCap className="h-8 w-8 text-[#FF5733]" />
-            <span className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-[#15803d]' : 'text-[#15803d]'}`}>EduGateway</span>
+            <span className={`text-xl md:text-2xl font-bold tracking-tight ${isScrolled ? 'text-[#15803d]' : 'text-[#15803d]'}`}>TNAEC</span>
           </Link>
 
           {/* Desktop Menu */}

@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
               <GraduationCap className="h-8 w-8 text-[#FF5733]" />
-              <span className="text-2xl font-bold tracking-tight text-[#15803d]">EduGateway</span>
+              <span className="text-2xl font-bold tracking-tight text-[#15803d]">TNAEC</span>
             </Link>
             <p className="text-slate-600 text-sm leading-relaxed mt-4">
               Your trusted partner for 12th admission guidance. We provide premium counseling to guide students into top-tier MBBS, Engineering, Arts, Science, and Agricultural colleges.
@@ -57,11 +57,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#FF5733] flex-shrink-0" />
-                <span className="text-slate-600 text-sm font-semibold">+91 98765 43210</span>
+                <span className="text-slate-600 text-sm font-semibold">+91 95973 71949</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#FF5733] flex-shrink-0" />
-                <span className="text-slate-600 text-sm font-semibold">info@edugateway.in</span>
+                <span className="text-slate-600 text-sm font-semibold">info@tnaec.in</span>
               </li>
             </ul>
           </div>
@@ -69,7 +69,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-200 text-center md:flex md:justify-between md:text-left">
           <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} EduGateway Consultancy. All rights reserved.
+            &copy; {new Date().getFullYear()} TNAEC Consultancy. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 space-x-4">
             <Link to="#" className="text-slate-500 hover:text-[#15803d] text-sm transition-colors">Privacy Policy</Link>

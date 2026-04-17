@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
               A Legacy of Trust <br/> in Education.
             </h3>
             <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
-              Join thousands of students and parents who have trusted EduGateway for their academic and career journeys. We don't just find you a college; we find you the right fit.
+              Join thousands of students and parents who have trusted TNAEC for their academic and career journeys. We don't just find you a college; we find you the right fit.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">

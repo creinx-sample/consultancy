@@ -34,7 +34,7 @@ const ServicesSection = () => {
       icon: Book,
       bg: "bg-indigo-50",
       color: "text-indigo-600",
-      path: "/contact"
+      path: "/tn-colleges"
     }
   ];
 

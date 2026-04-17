@@ -1,12 +1,27 @@
-import { Mail, Phone, MapPin, Clock, Globe } from 'lucide-react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Clock, Globe, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
       <div className="bg-[#15803d] py-24 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF5733]/10 rounded-full blur-[80px]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <div className="absolute top-0 left-0 -ml-10">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              Back
+            </Link>
+          </div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,8 +67,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-[#15803d] mb-2 uppercase tracking-tighter">Call Us</h4>
-                  <p className="text-slate-600 text-sm font-medium">+91 98765 43210</p>
-                  <p className="text-slate-600 text-sm font-medium">+91 99887 76655</p>
+                  <p className="text-slate-600 text-sm font-medium">+91 95973 71949</p>
                 </div>
               </div>
 
@@ -63,7 +77,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-[#15803d] mb-2 uppercase tracking-tighter">Email Us</h4>
-                  <p className="text-slate-600 text-sm font-medium">info@edugateway.in</p>
+                  <p className="text-slate-600 text-sm font-medium">info@tnaec.in</p>
                 </div>
               </div>
 
@@ -82,7 +96,7 @@ const Contact = () => {
           {/* Map Section */}
           <div className="relative">
             <div className="absolute inset-0 bg-[#FF5733]/5 rounded-[40px] rotate-2 transform scale-105 z-0 border border-slate-200"></div>
-            <div className="w-full h-[600px] bg-slate-200 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white relative z-10">
+            <div className="w-full h-[400px] md:h-[600px] bg-slate-200 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white relative z-10">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31263.15545524675!2d78.14!3d11.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf0380d603aeb%3A0xf69c73792c3065b7!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v16200000" 
                 width="100%" 

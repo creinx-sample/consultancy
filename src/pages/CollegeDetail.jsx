@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -18,6 +19,17 @@ import LeadForm from '../components/home/LeadForm';
 
 const CollegeDetail = () => {
   const { collegeId } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [collegeId]);
+
+  const scrollToForm = () => {
+    const formElement = document.getElementById('admission-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   // Find college in TN data or Countries data
   let college = null;
@@ -78,25 +90,17 @@ const CollegeDetail = () => {
                 <span className="font-bold text-lg">{college.location || "International Campus"}</span>
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
-                <div className="text-center p-4 bg-emerald-50 rounded-2xl border border-emerald-100">
-                  <Star className="w-6 h-6 text-emerald-600 mx-auto mb-2" />
-                  <div className="text-xs font-black text-slate-400 uppercase">Ranking</div>
-                  <div className="text-lg font-black text-emerald-700">Top 50</div>
-                </div>
-                <div className="text-center p-4 bg-orange-50 rounded-2xl border border-orange-100">
-                  <Users className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-                  <div className="text-xs font-black text-slate-400 uppercase">Students</div>
-                  <div className="text-lg font-black text-orange-700">10,000+</div>
-                </div>
-                <div className="text-center p-4 bg-indigo-50 rounded-2xl border border-indigo-100">
-                  <Globe className="w-6 h-6 text-indigo-600 mx-auto mb-2" />
-                  <div className="text-xs font-black text-slate-400 uppercase">Partners</div>
-                  <div className="text-lg font-black text-indigo-700">50+</div>
-                </div>
+              <div className="flex flex-wrap gap-4 mb-10">
+                {college.highlights?.slice(0, 3).map((highlight, index) => (
+                  <div key={index} className="flex items-center gap-2 bg-emerald-50 text-emerald-800 px-4 py-2 rounded-xl text-sm font-bold border border-emerald-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    {highlight}
+                  </div>
+                ))}
               </div>
 
               <motion.button 
+                onClick={scrollToForm}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#15803d] text-white px-10 py-5 rounded-full font-black text-lg shadow-xl shadow-emerald-200 uppercase tracking-widest"
@@ -121,19 +125,20 @@ const CollegeDetail = () => {
               <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#15803d]/10 rounded-full blur-3xl" />
               
               {/* Floating Batch */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 right-10 bg-white p-6 rounded-3xl shadow-2xl z-20 flex items-center gap-4 border border-slate-100"
-              >
-                <div className="w-12 h-12 bg-[#FF5733] rounded-2xl flex items-center justify-center">
-                  <Camera className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-[10px] font-black text-slate-300 uppercase letter-tracking-wider">Experience</div>
-                  <div className="text-sm font-black text-slate-800 uppercase">Campus Gallery</div>
-                </div>
-              </motion.div>
+              {college.images && college.images.length > 0 && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+                  transition={{ 
+                    opacity: { duration: 0.5 },
+                    scale: { duration: 0.5 },
+                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" } 
+                  }}
+                  className="absolute -bottom-6 right-10 bg-white shadow-2xl z-20 overflow-hidden rounded-2xl border-4 border-white"
+                >
+                  <img src={college.images[0]} alt="Campus View" className="w-48 h-32 object-cover" />
+                </motion.div>
+              )}
             </motion.div>
           </div>
         </div>
@@ -184,27 +189,20 @@ const CollegeDetail = () => {
                   {college.infrastructure || "The campus features state-of-the-art laboratories, modern smart classrooms, and extensive research centers. Every facility is designed to support both academic rigor and creative innovation."}
                 </p>
                 
-                {/* Secondary Images Gallery */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {college.images?.slice(1).map((img, i) => (
-                    <div key={i} className="aspect-video rounded-3xl overflow-hidden shadow-lg border-4 border-white group">
-                      <img 
-                        src={img} 
-                        alt="Campus Facet" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                    </div>
-                  ))}
-                  {(!college.images || college.images.length < 2) && (
-                    <div className="aspect-video rounded-3xl overflow-hidden shadow-lg border-4 border-white group">
-                      <img 
-                        src="https://images.unsplash.com/photo-1541339907198-e08759df9a13?q=80" 
-                        alt="Infrastructure" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
-                    </div>
-                  )}
-                </div>
+                {/* Secondary Images Gallery (If Valid Additional Real Images Exist) */}
+                {college.images && college.images.length > 1 && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    {college.images.slice(1).map((img, i) => (
+                      <div key={i} className="aspect-video rounded-3xl overflow-hidden shadow-lg border-4 border-white group">
+                        <img 
+                          src={img} 
+                          alt={`${college.name} Campus Facility`} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
 
               {/* Courses Section */}
@@ -261,7 +259,10 @@ const CollegeDetail = () => {
                   </div>
                   
                   <div className="mt-10 pt-10 border-t border-slate-100">
-                    <button className="w-full bg-[#FF5733] text-white py-5 rounded-3xl font-black text-lg shadow-xl shadow-orange-100 hover:bg-[#e64a19] transition-all uppercase tracking-widest">
+                    <button 
+                      onClick={scrollToForm}
+                      className="w-full bg-[#FF5733] text-white py-5 rounded-3xl font-black text-lg shadow-xl shadow-orange-100 hover:bg-[#e64a19] transition-all uppercase tracking-widest"
+                    >
                       Request Prospectus
                     </button>
                   </div>
@@ -290,7 +291,7 @@ const CollegeDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section id="admission-form" className="py-20">
         <LeadForm />
       </section>
 

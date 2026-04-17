@@ -1,11 +1,16 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { MapPin, CheckCircle, GraduationCap, Stethoscope, Cpu, Globe, Award } from 'lucide-react';
+import { MapPin, CheckCircle, GraduationCap, Stethoscope, Cpu, Globe, Award, ArrowLeft } from 'lucide-react';
 import { countriesData } from '../data/collegesData';
 import LeadForm from '../components/home/LeadForm';
 
 const RussiaColleges = () => {
   const russiaData = countriesData.find(c => c.country === "Russia");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
@@ -15,6 +20,15 @@ const RussiaColleges = () => {
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-[80px]" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="absolute top-0 left-0 -ml-10">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              Back
+            </Link>
+          </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -76,9 +90,15 @@ const RussiaColleges = () => {
                     to={id ? `/college/${id}` : '#'} 
                     className="p-8 block h-full flex gap-6 items-start"
                   >
-                    <div className="w-12 h-12 bg-slate-50 text-[#15803d] rounded-xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-[#FF5733] group-hover:text-white transition-colors shrink-0">
-                      {i + 1}
-                    </div>
+                    {isObject && univ.images && univ.images[0] ? (
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-slate-100 shadow-sm relative group-hover:shadow-md transition-shadow">
+                        <img src={univ.images[0]} alt={name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 bg-slate-50 text-[#15803d] rounded-2xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-[#FF5733] group-hover:text-white transition-colors shrink-0">
+                        {i + 1}
+                      </div>
+                    )}
                     <div>
                       <h3 className="text-xl md:text-2xl font-extrabold text-slate-800 mb-4 font-serif leading-tight group-hover:text-[#15803d] transition-colors">
                         {name}
@@ -126,11 +146,17 @@ const RussiaColleges = () => {
                 transition={{ delay: i * 0.05 }}
                 className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-[#15803d]/20 transition-all group flex gap-6 items-start"
               >
-                <div className="w-12 h-12 bg-slate-50 text-[#FF5733] rounded-xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
-                  {i + 1}
-                </div>
+                {typeof univ === 'object' && univ.images && univ.images[0] ? (
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-slate-100 shadow-sm relative group-hover:shadow-md transition-shadow">
+                    <img src={univ.images[0]} alt={univ.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 bg-slate-50 text-[#FF5733] rounded-2xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-[#15803d] group-hover:text-white transition-colors shrink-0">
+                    {i + 1}
+                  </div>
+                )}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-extrabold text-slate-800 mb-4 font-serif leading-tight group-hover:text-[#FF5733] transition-colors">{univ}</h3>
+                  <h3 className="text-xl md:text-2xl font-extrabold text-slate-800 mb-4 font-serif leading-tight group-hover:text-[#FF5733] transition-colors">{typeof univ === 'object' ? univ.name : univ}</h3>
                   <div className="flex flex-wrap gap-4">
                     <span className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider">
                       <CheckCircle className="w-4 h-4 text-[#FF5733]" /> Industrial Connect

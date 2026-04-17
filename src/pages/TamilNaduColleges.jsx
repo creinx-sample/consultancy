@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, MapPin, CheckCircle, GraduationCap, Cpu, Book, Stethoscope, Leaf, Scale, Globe } from 'lucide-react';
 import { tnUniversitiesData } from '../data/collegesData';
 import LeadForm from '../components/home/LeadForm';
+import { ArrowLeft } from 'lucide-react';
 
 const TamilNaduColleges = () => {
   const [activeCategory, setActiveCategory] = useState(tnUniversitiesData[0].category);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const activeData = tnUniversitiesData.find(cat => cat.category === activeCategory);
 
@@ -19,13 +24,40 @@ const TamilNaduColleges = () => {
     Award: Award
   };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+};
+
   return (
-    <div className="pt-24 min-h-screen bg-slate-50">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="pt-24 min-h-screen bg-slate-50"
+    >
       {/* Header */}
       <div className="bg-[#15803d] py-24 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF5733]/10 rounded-full blur-[80px]" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <div className="absolute top-0 left-0 -ml-10">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              Back
+            </Link>
+          </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -55,25 +87,33 @@ const TamilNaduColleges = () => {
       {/* Filter Bar */}
       <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-lg border-b border-slate-200 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-2 justify-center">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            className="flex flex-wrap gap-3 justify-center"
+          >
             {tnUniversitiesData.map((cat) => {
               const Icon = iconMap[cat.icon] || Globe;
               return (
-                <button
+                <motion.button
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   key={cat.category}
                   onClick={() => setActiveCategory(cat.category)}
-                  className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
+                  className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-colors ${
                     activeCategory === cat.category
-                      ? 'bg-[#15803d] text-white shadow-lg'
+                      ? 'bg-[#15803d] text-white shadow-lg shadow-[#15803d]/30'
                       : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
                   {cat.category}
-                </button>
+                </motion.button>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -93,53 +133,63 @@ const TamilNaduColleges = () => {
           </div>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-          <AnimatePresence mode="wait">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          key={activeCategory + "grid"}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20"
+        >
+          <AnimatePresence mode="popLayout">
             {activeData.colleges.map((college, i) => (
               <motion.div 
-                key={college.name + activeCategory}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ delay: i * 0.05 }}
-                className="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full flex flex-col"
+                key={college.id || college.name}
+                layout
+                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.2 } }}
+                transition={{ type: "spring", stiffness: 200, damping: 20, delay: i * 0.05 }}
+                whileHover={{ y: -8 }}
+                className="group bg-white rounded-3xl border border-slate-100 ring-1 ring-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-[#15803d]/10 transition-all duration-300 relative overflow-hidden h-full flex flex-col"
               >
+                {college.images && college.images[0] && (
+                  <div className="w-full h-48 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                    <img 
+                      src={college.images[0]} 
+                      alt={college.name} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 text-white/90 text-sm font-bold tracking-wider uppercase">
+                      <MapPin className="w-4 h-4 text-[#FF5733]" />
+                      {college.location}
+                    </div>
+                  </div>
+                )}
+                
                 <Link 
                   to={college.id ? `/college/${college.id}` : '#'} 
                   className="p-8 block h-full flex flex-col relative"
                 >
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#15803d]/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
-                  
-                  <div className="flex flex-col md:flex-row gap-6 items-start relative z-10 h-full">
-                    <div className="w-16 h-16 bg-[#15803d] text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg shadow-[#15803d]/20 shrink-0">
-                      {i + 1}
-                    </div>
+                  <div className="flex-grow flex flex-col h-full">
+                    <h3 className="text-xl md:text-2xl font-black text-slate-800 mb-4 group-hover:text-[#15803d] transition-colors font-serif leading-tight">
+                      {college.name}
+                    </h3>
                     
-                    <div className="flex-grow flex flex-col h-full">
-                      <div className="flex items-center gap-2 text-[#FF5733] font-bold text-sm mb-2 uppercase tracking-widest">
-                        <MapPin className="w-4 h-4" />
-                        {college.location}
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-black text-slate-800 mb-4 group-hover:text-[#15803d] transition-colors font-serif leading-tight">
-                        {college.name}
-                      </h3>
-                      
-                      <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 mb-6 flex-grow">
-                        <p className="text-slate-600 font-medium leading-relaxed italic text-sm md:text-base">
-                          "{college.features}"
-                        </p>
-                      </div>
+                    <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 mb-6 flex-grow transition-colors group-hover:bg-[#15803d]/5">
+                      <p className="text-slate-600 font-medium leading-relaxed italic text-sm md:text-base">
+                        "{college.features}"
+                      </p>
+                    </div>
 
-                      <div className="flex flex-wrap gap-4 mt-auto">
-                        <div className="flex items-center gap-2 text-[#15803d] bg-emerald-50 px-3 py-1 rounded-md">
-                          <CheckCircle className="w-4 h-4" />
-                          <span className="font-bold text-xs">Admission Open</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-400 group-hover:text-[#FF5733] transition-colors ml-auto">
-                          <GraduationCap className="w-4 h-4" />
-                          <span className="font-bold text-xs uppercase tracking-widest">{activeCategory} Specialist</span>
-                        </div>
+                    <div className="flex flex-wrap gap-4 mt-auto">
+                      <div className="flex items-center gap-2 text-[#15803d] bg-emerald-50 px-3 py-1 rounded-md transition-colors group-hover:bg-[#15803d] group-hover:text-white">
+                        <CheckCircle className="w-4 h-4" />
+                        <span className="font-bold text-xs">Admission Open</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-400 group-hover:text-[#FF5733] transition-colors ml-auto">
+                        <GraduationCap className="w-4 h-4" />
+                        <span className="font-bold text-xs uppercase tracking-widest">{activeCategory}</span>
                       </div>
                     </div>
                   </div>
@@ -147,7 +197,7 @@ const TamilNaduColleges = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
+        </motion.div>
 
         {/* Call to Action */}
         <motion.div 
@@ -175,7 +225,7 @@ const TamilNaduColleges = () => {
       </div>
 
       <LeadForm />
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,14 @@
-import { CheckCircle2 } from 'lucide-react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { CheckCircle2, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LeadForm from '../components/home/LeadForm';
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
       
@@ -10,12 +16,21 @@ const About = () => {
       <div className="bg-[#15803d] py-24 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF5733]/10 rounded-full blur-[80px]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <div className="absolute top-0 left-0 -ml-10">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              Back
+            </Link>
+          </div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-extrabold text-white mb-6 font-serif"
           >
-            About EduGateway
+            About TNAEC
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -38,7 +53,7 @@ const About = () => {
               Empowering the Next Generation of Professionals.
             </h3>
             <p className="text-slate-600 mb-6 leading-relaxed font-medium">
-              EduGateway was founded with a single mission: to provide honest and transparent career guidance to students after their 12th standard. We specialized in MBBS abroad and premier Indian engineering colleges to bridge the gap between dreams and reality.
+              TNAEC was founded with a single mission: to provide honest and transparent career guidance to students after their 12th standard. We specialized in MBBS abroad and premier Indian engineering colleges to bridge the gap between dreams and reality.
             </p>
             <p className="text-slate-600 mb-8 leading-relaxed font-medium">
               Over the last decade, we have helped over 5,000 students from across Tamil Nadu and South India find their perfect academic path. Our commitment remains to your success and transparency.

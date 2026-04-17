@@ -2,8 +2,8 @@ import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FloatingWhatsApp = () => {
-  const phoneNumber = "919876543210";
-  const defaultMessage = "Hello EduGateway, I would like to know more about the admission process.";
+  const phoneNumber = "919597371949";
+  const defaultMessage = "Hello TNAEC, I would like to know more about the admission process.";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 

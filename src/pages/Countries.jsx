@@ -80,9 +80,13 @@ const Countries = () => {
                     </h5>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {dest.medicalUniversities.map((univ, idx) => (
-                        <div key={idx} className="flex gap-2 items-start p-2 bg-white rounded-lg border border-slate-100 shadow-sm hover:border-[#FF5733]/30 transition-colors">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#FF5733] mt-2 shrink-0" />
-                          <span className="text-slate-600 text-sm font-semibold">{univ.name || univ}</span>
+                        <div key={idx} className="flex gap-3 items-center p-2 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#FF5733]/30 transition-all">
+                          {typeof univ === 'object' && univ.images && univ.images[0] ? (
+                            <img src={univ.images[0]} alt={univ.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
+                          ) : (
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#FF5733] shrink-0 ml-2" />
+                          )}
+                          <span className="text-slate-700 text-sm font-semibold">{univ.name || univ}</span>
                         </div>
                       ))}
                     </div>
@@ -97,9 +101,13 @@ const Countries = () => {
                     </h5>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {dest.engineeringUniversities.map((univ, idx) => (
-                        <div key={idx} className="flex gap-2 items-start p-2 bg-white rounded-lg border border-slate-100 shadow-sm hover:border-[#15803d]/30 transition-colors">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#15803d] mt-2 shrink-0" />
-                          <span className="text-slate-600 text-sm font-semibold">{univ.name || univ}</span>
+                        <div key={idx} className="flex gap-3 items-center p-2 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#15803d]/30 transition-all">
+                          {typeof univ === 'object' && univ.images && univ.images[0] ? (
+                            <img src={univ.images[0]} alt={univ.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
+                          ) : (
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#15803d] shrink-0 ml-2" />
+                          )}
+                          <span className="text-slate-700 text-sm font-semibold">{univ.name || univ}</span>
                         </div>
                       ))}
                     </div>

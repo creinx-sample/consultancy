@@ -1,15 +1,57 @@
 export const tnUniversitiesData = [
   {
     category: "Multi-Disciplinary",
-    description: "These universities offer Engineering + Arts + Science + Law + Pharmacy + Allied Health.",
+    description: "These universities offer Engineering, Arts, Science, Law, Pharmacy, and Allied Health.",
     icon: "Award",
     colleges: [
-      { id: "srm-ist", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["Engineering", "Arts", "Science", "Law", "Pharmacy"], images: ["/images/colleges/srm.jpg"] },
-      { id: "saveetha-simats", name: "Saveetha Institute of Medical and Technical Sciences", location: "Chennai", courses: ["Medical", "Technical"], images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"] },
-      { id: "sastra", name: "Shanmugha Arts Science Technology and Research Academy (SASTRA)", location: "Thanjavur", courses: ["Arts", "Science", "Technology"], images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"] },
-      { id: "prist", name: "Ponnaiyah Ramajayam Institute of Science and Technology", location: "Thanjavur", courses: ["Science", "Technology"], images: ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80"] },
-      { id: "amrita", name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore", courses: ["Engineering", "Science"], images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"] },
-      { id: "vit", name: "Vellore Institute of Technology", location: "Vellore", courses: ["Engineering", "Science"], images: ["/images/colleges/vit.jpg"] }
+      { 
+        id: "srm-ist", 
+        name: "SRM Institute of Science and Technology", 
+        location: "Chennai", 
+        courses: ["Engineering", "Arts", "Science", "Law", "Pharmacy"], 
+        images: ["/images/colleges/srm.jpg"],
+        website: "https://www.srmist.edu.in/"
+      },
+      { 
+        id: "saveetha-simats", 
+        name: "Saveetha Institute of Medical and Technical Sciences", 
+        location: "Chennai", 
+        courses: ["Medical", "Technical"], 
+        images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"],
+        website: "https://www.saveetha.com/"
+      },
+      { 
+        id: "sastra", 
+        name: "Shanmugha Arts Science Technology and Research Academy (SASTRA)", 
+        location: "Thanjavur", 
+        courses: ["Arts", "Science", "Technology"], 
+        images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"],
+        website: "https://www.sastra.edu/"
+      },
+      { 
+        id: "prist", 
+        name: "Ponnaiyah Ramajayam Institute of Science and Technology", 
+        location: "Thanjavur", 
+        courses: ["Science", "Technology"], 
+        images: ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80"],
+        website: "https://www.prist.ac.in/"
+      },
+      { 
+        id: "amrita", 
+        name: "Amrita Vishwa Vidyapeetham", 
+        location: "Coimbatore", 
+        courses: ["Engineering", "Science"], 
+        images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"],
+        website: "https://www.amrita.edu/"
+      },
+      { 
+        id: "vit", 
+        name: "Vellore Institute of Technology", 
+        location: "Vellore", 
+        courses: ["Engineering", "Science"], 
+        images: ["/images/colleges/vit.jpg"],
+        website: "https://vit.ac.in/"
+      }
     ]
   },
   {
@@ -17,12 +59,54 @@ export const tnUniversitiesData = [
     description: "Top-ranked in placements & NIRF rankings.",
     icon: "Cpu",
     colleges: [
-      { id: "vit-eng", name: "Vellore Institute of Technology", location: "Vellore", courses: ["B.E", "B.Tech", "M.Tech"], images: ["/images/colleges/vit.jpg"] },
-      { id: "srm-eng", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["B.E", "B.Tech", "M.Tech"], images: ["/images/colleges/srm.jpg"] },
-      { id: "amrita-eng", name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore", courses: ["B.E", "B.Tech", "M.Tech"], images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"] },
-      { id: "sastra-eng", name: "SASTRA University", location: "Thanjavur", courses: ["B.E", "B.Tech", "M.Tech"], images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"] },
-      { id: "karunya-eng", name: "Karunya Institute of Technology and Sciences", location: "Coimbatore", courses: ["B.E", "B.Tech", "M.Tech"], images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"] },
-      { id: "kalasalingam-eng", name: "Kalasalingam Academy of Research and Education", location: "Krishnankoil", courses: ["B.E", "B.Tech", "M.Tech"], images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"] }
+      { 
+        id: "vit-eng", 
+        name: "Vellore Institute of Technology", 
+        location: "Vellore", 
+        courses: ["B.E", "B.Tech", "M.Tech"], 
+        images: ["/images/colleges/vit.jpg"],
+        website: "https://vit.ac.in/"
+      },
+      { 
+        id: "srm-eng", 
+        name: "SRM Institute of Science and Technology", 
+        location: "Chennai", 
+        courses: ["B.E", "B.Tech", "M.Tech"], 
+        images: ["/images/colleges/srm.jpg"],
+        website: "https://www.srmist.edu.in/"
+      },
+      { 
+        id: "amrita-eng", 
+        name: "Amrita Vishwa Vidyapeetham", 
+        location: "Coimbatore", 
+        courses: ["B.E", "B.Tech", "M.Tech"], 
+        images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"],
+        website: "https://www.amrita.edu/"
+      },
+      { 
+        id: "sastra-eng", 
+        name: "SASTRA University", 
+        location: "Thanjavur", 
+        courses: ["B.E", "B.Tech", "M.Tech"], 
+        images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"],
+        website: "https://www.sastra.edu/"
+      },
+      { 
+        id: "karunya-eng", 
+        name: "Karunya Institute of Technology and Sciences", 
+        location: "Coimbatore", 
+        courses: ["B.E", "B.Tech", "M.Tech"], 
+        images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"],
+        website: "https://www.karunya.edu/"
+      },
+      { 
+        id: "kalasalingam-eng", 
+        name: "Kalasalingam Academy of Research and Education", 
+        location: "Krishnankoil", 
+        courses: ["B.E", "B.Tech", "M.Tech"], 
+        images: ["https://images.unsplash.com/photo-1513622470522-26cb3cad87c7?q=80"],
+        website: "https://kalasalingam.ac.in/"
+      }
     ]
   },
   {
@@ -30,11 +114,46 @@ export const tnUniversitiesData = [
     description: "Tamil Nadu has a strong arts & science ecosystem with high rankings nationally.",
     icon: "Book",
     colleges: [
-      { id: "srm-arts", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["B.Sc", "B.Com", "BBA", "BA"], images: ["/images/colleges/srm.jpg"] },
-      { id: "saveetha-arts", name: "Saveetha University", location: "Chennai", courses: ["B.Sc", "B.Com", "BBA", "BA"], images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"] },
-      { id: "amrita-arts", name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore", courses: ["B.Sc", "B.Com", "BBA", "BA"], images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"] },
-      { id: "sastra-arts", name: "SASTRA University", location: "Thanjavur", courses: ["B.Sc", "B.Com", "BBA", "BA"], images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"] },
-      { id: "sriramakrishna-arts", name: "Sri Ramakrishna College of Arts and Science", location: "Coimbatore", courses: ["B.Sc", "B.Com", "BBA", "BA"], images: ["/images/colleges/sri_ramakrishna.jpg"] }
+      { 
+        id: "srm-arts", 
+        name: "SRM Institute of Science and Technology", 
+        location: "Chennai", 
+        courses: ["B.Sc", "B.Com", "BBA", "BA"], 
+        images: ["/images/colleges/srm.jpg"],
+        website: "https://www.srmist.edu.in/"
+      },
+      { 
+        id: "saveetha-arts", 
+        name: "Saveetha University", 
+        location: "Chennai", 
+        courses: ["B.Sc", "B.Com", "BBA", "BA"], 
+        images: ["https://images.unsplash.com/photo-1541178735423-4f9c3d5ff65a?q=80"],
+        website: "https://www.saveetha.com/"
+      },
+      { 
+        id: "amrita-arts", 
+        name: "Amrita Vishwa Vidyapeetham", 
+        location: "Coimbatore", 
+        courses: ["B.Sc", "B.Com", "BBA", "BA"], 
+        images: ["https://images.unsplash.com/photo-1598463991276-f8d959f0f9b6?q=80"],
+        website: "https://www.amrita.edu/"
+      },
+      { 
+        id: "sastra-arts", 
+        name: "SASTRA University", 
+        location: "Thanjavur", 
+        courses: ["B.Sc", "B.Com", "BBA", "BA"], 
+        images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"],
+        website: "https://www.sastra.edu/"
+      },
+      { 
+        id: "sriramakrishna-arts", 
+        name: "Sri Ramakrishna College of Arts and Science", 
+        location: "Coimbatore", 
+        courses: ["B.Sc", "B.Com", "BBA", "BA"], 
+        images: ["/images/colleges/sri_ramakrishna.jpg"],
+        website: "https://www.srcas.ac.in/"
+      }
     ]
   },
   {
@@ -42,10 +161,38 @@ export const tnUniversitiesData = [
     description: "Provide hospital-based training & clinical exposure.",
     icon: "Activity",
     colleges: [
-      { id: "saveetha-med", name: "Saveetha Institute of Medical and Technical Sciences", location: "Chennai", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80"] },
-      { id: "srm-med", name: "SRM Medical College Hospital and Research Centre", location: "Chennai", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], images: ["/images/colleges/srm.jpg"] },
-      { id: "chettinad-med", name: "Chettinad Academy of Research and Education", location: "Kelambakkam", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80"] },
-      { id: "sriramachandra-med", name: "Sri Ramachandra Institute of Higher Education and Research", location: "Chennai", courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], images: ["https://images.unsplash.com/photo-1621360841013-c76831f1628c?q=80"] }
+      { 
+        id: "saveetha-med", 
+        name: "Saveetha Institute of Medical and Technical Sciences", 
+        location: "Chennai", 
+        courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
+        images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80"],
+        website: "https://www.saveetha.com/"
+      },
+      { 
+        id: "srm-med", 
+        name: "SRM Medical College Hospital and Research Centre", 
+        location: "Chennai", 
+        courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
+        images: ["/images/colleges/srm.jpg"],
+        website: "https://www.srmist.edu.in/"
+      },
+      { 
+        id: "chettinad-med", 
+        name: "Chettinad Academy of Research and Education", 
+        location: "Kelambakkam", 
+        courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
+        images: ["https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80"],
+        website: "https://care.edu.in/"
+      },
+      { 
+        id: "sriramachandra-med", 
+        name: "Sri Ramachandra Institute of Higher Education and Research", 
+        location: "Chennai", 
+        courses: ["B.Sc Nursing", "Physiotherapy", "Allied Health"], 
+        images: ["https://images.unsplash.com/photo-1621360841013-c76831f1628c?q=80"],
+        website: "https://www.sriramachandra.edu.in/"
+      }
     ]
   },
   {
@@ -53,10 +200,38 @@ export const tnUniversitiesData = [
     description: "Top Private Pharmacy Universities.",
     icon: "Crosshair",
     colleges: [
-      { id: "srm-pharm", name: "SRM Institute of Science and Technology", location: "Chennai", courses: ["B.Pharm", "M.Pharm", "Pharm.D"], images: ["/images/colleges/srm.jpg"] },
-      { id: "saveetha-pharm", name: "Saveetha University", location: "Chennai", courses: ["B.Pharm", "M.Pharm", "Pharm.D"], images: ["https://images.unsplash.com/photo-1562774053-701939374585?q=80"] },
-      { id: "jss-pharm", name: "JSS College of Pharmacy Ooty", location: "Ooty", courses: ["B.Pharm", "M.Pharm", "Pharm.D"], images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"] },
-      { id: "kalasalingam-pharm", name: "Kalasalingam Academy of Research and Education", location: "Krishnankoil", courses: ["B.Pharm", "M.Pharm", "Pharm.D"], images: ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80"] }
+      { 
+        id: "srm-pharm", 
+        name: "SRM Institute of Science and Technology", 
+        location: "Chennai", 
+        courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
+        images: ["/images/colleges/srm.jpg"],
+        website: "https://www.srmist.edu.in/"
+      },
+      { 
+        id: "saveetha-pharm", 
+        name: "Saveetha University", 
+        location: "Chennai", 
+        courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
+        images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80"],
+        website: "https://www.saveetha.com/"
+      },
+      { 
+        id: "jss-pharm", 
+        name: "JSS College of Pharmacy Ooty", 
+        location: "Ooty", 
+        courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
+        images: ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80"],
+        website: "https://jssuni.edu.in/"
+      },
+      { 
+        id: "kalasalingam-pharm", 
+        name: "Kalasalingam Academy of Research and Education", 
+        location: "Krishnankoil", 
+        courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
+        images: ["https://images.unsplash.com/photo-1513622470522-26cb3cad87c7?q=80"],
+        website: "https://kalasalingam.ac.in/"
+      }
     ]
   },
   {
@@ -64,10 +239,38 @@ export const tnUniversitiesData = [
     description: "Top Law Universities (Private).",
     icon: "Briefcase",
     colleges: [
-      { id: "saveetha-law", name: "Saveetha School of Law", location: "Chennai", courses: ["LLB", "BA LLB", "BBA LLB"], images: ["https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80"] },
-      { id: "srm-law", name: "SRM School of Law", location: "Chennai", courses: ["LLB", "BA LLB", "BBA LLB"], images: ["/images/colleges/srm.jpg"] },
-      { id: "sastra-law", name: "SASTRA University School of Law", location: "Thanjavur", courses: ["LLB", "BA LLB", "BBA LLB"], images: ["https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80"] },
-      { id: "vit-law", name: "VIT School of Law", location: "Vellore", courses: ["LLB", "BA LLB", "BBA LLB"], images: ["/images/colleges/vit.jpg"] }
+      { 
+        id: "saveetha-law", 
+        name: "Saveetha School of Law", 
+        location: "Chennai", 
+        courses: ["LLB", "BA LLB", "BBA LLB"], 
+        images: ["https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80"],
+        website: "https://www.saveetha.com/"
+      },
+      { 
+        id: "srm-law", 
+        name: "SRM School of Law", 
+        location: "Chennai", 
+        courses: ["LLB", "BA LLB", "BBA LLB"], 
+        images: ["/images/colleges/srm.jpg"],
+        website: "https://www.srmist.edu.in/"
+      },
+      { 
+        id: "sastra-law", 
+        name: "SASTRA University School of Law", 
+        location: "Thanjavur", 
+        courses: ["LLB", "BA LLB", "BBA LLB"], 
+        images: ["https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80"],
+        website: "https://www.sastra.edu/"
+      },
+      { 
+        id: "vit-law", 
+        name: "VIT School of Law", 
+        location: "Vellore", 
+        courses: ["LLB", "BA LLB", "BBA LLB"], 
+        images: ["/images/colleges/vit.jpg"],
+        website: "https://vit.ac.in/"
+      }
     ]
   }
 ];

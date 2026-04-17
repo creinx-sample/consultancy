@@ -85,9 +85,22 @@ const CollegeDetail = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 font-serif leading-tight">
                 {college.name}
               </h1>
-              <div className="flex items-center gap-3 text-slate-600 mb-8 bg-slate-50 p-4 rounded-2xl w-fit">
-                <MapPin className="w-5 h-5 text-[#15803d]" />
-                <span className="font-bold text-lg">{college.location || "International Campus"}</span>
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                <div className="flex items-center gap-3 text-slate-600 bg-slate-50 p-4 rounded-2xl w-fit">
+                  <MapPin className="w-5 h-5 text-[#15803d]" />
+                  <span className="font-bold text-lg">{college.location || "International Campus"}</span>
+                </div>
+                {college.website && (
+                  <a 
+                    href={college.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 text-blue-600 bg-blue-50 hover:bg-blue-100 p-4 rounded-2xl transition-colors shrink-0 group"
+                  >
+                    <Globe className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <span className="font-bold text-lg">Official Website</span>
+                  </a>
+                )}
               </div>
               
               <div className="flex flex-wrap gap-4 mb-10">

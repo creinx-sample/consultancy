@@ -177,8 +177,8 @@ const itemVariants = {
                     </h3>
                     
                     <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 mb-6 flex-grow transition-colors group-hover:bg-[#15803d]/5">
-                      <p className="text-slate-600 font-medium leading-relaxed italic text-sm md:text-base">
-                        "{college.features}"
+                      <p className="text-slate-600 font-medium leading-relaxed italic text-sm md:text-base line-clamp-2">
+                        {college.features ? `"${college.features}"` : `Key Programs: ${college.courses?.join(', ')}`}
                       </p>
                     </div>
 

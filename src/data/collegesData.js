@@ -104,7 +104,7 @@ export const tnUniversitiesData = [
         name: "Kalasalingam Academy of Research and Education", 
         location: "Krishnankoil", 
         courses: ["B.E", "B.Tech", "M.Tech"], 
-        images: ["/images/colleges/kalasalingam.jpg"],
+        images: ["/images/colleges/kalasalingam2.jpg"],
         website: "https://kalasalingam.ac.in/"
       }
     ]
@@ -229,7 +229,7 @@ export const tnUniversitiesData = [
         name: "Kalasalingam Academy of Research and Education", 
         location: "Krishnankoil", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["/images/colleges/kalasalingam.jpg"],
+        images: ["/images/colleges/kalasalingam2.jpg"],
         website: "https://kalasalingam.ac.in/"
       }
     ]

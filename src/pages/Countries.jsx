@@ -82,7 +82,7 @@ const Countries = () => {
                       {dest.medicalUniversities.map((univ, idx) => (
                         <div key={idx} className="flex gap-2 items-start p-2 bg-white rounded-lg border border-slate-100 shadow-sm hover:border-[#FF5733]/30 transition-colors">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#FF5733] mt-2 shrink-0" />
-                          <span className="text-slate-600 text-sm font-semibold">{univ}</span>
+                          <span className="text-slate-600 text-sm font-semibold">{univ.name || univ}</span>
                         </div>
                       ))}
                     </div>
@@ -99,7 +99,7 @@ const Countries = () => {
                       {dest.engineeringUniversities.map((univ, idx) => (
                         <div key={idx} className="flex gap-2 items-start p-2 bg-white rounded-lg border border-slate-100 shadow-sm hover:border-[#15803d]/30 transition-colors">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#15803d] mt-2 shrink-0" />
-                          <span className="text-slate-600 text-sm font-semibold">{univ}</span>
+                          <span className="text-slate-600 text-sm font-semibold">{univ.name || univ}</span>
                         </div>
                       ))}
                     </div>

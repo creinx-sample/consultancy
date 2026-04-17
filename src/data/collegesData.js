@@ -104,7 +104,7 @@ export const tnUniversitiesData = [
         name: "Kalasalingam Academy of Research and Education", 
         location: "Krishnankoil", 
         courses: ["B.E", "B.Tech", "M.Tech"], 
-        images: ["/images/colleges/kalasalingam2.jpg"],
+        images: ["/images/colleges/kalasalingam.jpg"],
         website: "https://kalasalingam.ac.in/"
       }
     ]
@@ -221,7 +221,7 @@ export const tnUniversitiesData = [
         name: "JSS College of Pharmacy Ooty", 
         location: "Ooty", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["/images/colleges/jss_pharmacy.jpg"],
+        images: ["/images/colleges/karunya.jpg"],
         website: "https://jssuni.edu.in/"
       },
       { 
@@ -229,7 +229,7 @@ export const tnUniversitiesData = [
         name: "Kalasalingam Academy of Research and Education", 
         location: "Krishnankoil", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["/images/colleges/kalasalingam2.jpg"],
+        images: ["/images/colleges/kalasalingam.jpg"],
         website: "https://kalasalingam.ac.in/"
       }
     ]

@@ -10,7 +10,9 @@ import Countries from './pages/Countries';
 import Contact from './pages/Contact';
 import TamilNaduColleges from './pages/TamilNaduColleges';
 import RussiaColleges from './pages/RussiaColleges';
+import GeorgiaColleges from './pages/GeorgiaColleges';
 import CollegeDetail from './pages/CollegeDetail';
+import Founder from './pages/Founder';
 
 function App() {
   return (
@@ -25,8 +27,10 @@ function App() {
             <Route path="/countries" element={<Countries />} />
             <Route path="/tn-colleges" element={<TamilNaduColleges />} />
             <Route path="/russia-colleges" element={<RussiaColleges />} />
+            <Route path="/georgia-colleges" element={<GeorgiaColleges />} />
             <Route path="/college/:collegeId" element={<CollegeDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/founder" element={<Founder />} />
           </Routes>
         </main>
         <Footer />

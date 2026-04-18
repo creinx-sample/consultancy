@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MapPin, CheckCircle, GraduationCap, Stethoscope } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { countriesData } from '../data/collegesData';
@@ -37,82 +38,72 @@ const Countries = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-[40px] p-8 md:p-12 shadow-xl border border-slate-100 flex flex-col gap-10 hover:shadow-2xl transition-all group overflow-hidden relative"
+              className="bg-white rounded-[4rem] p-10 md:p-16 shadow-2xl shadow-slate-200 border border-slate-100 flex flex-col gap-12 hover:shadow-[#15803d]/10 transition-all group overflow-hidden relative"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF5733]/5 rounded-bl-[100px] border-l border-b border-[#FF5733]/10" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF5733]/5 rounded-bl-[100px] border-l border-b border-[#FF5733]/10" />
               
-              <div className="flex flex-col sm:flex-row items-center gap-10">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-[10px] border-slate-50 flex-shrink-0 shadow-inner group-hover:border-[#FF5733]/10 transition-colors">
+              <div className="flex flex-col sm:flex-row items-center gap-12 relative z-10">
+                <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-[12px] border-slate-50 flex-shrink-0 shadow-inner group-hover:border-[#FF5733]/20 transition-all duration-500">
                   <img 
                     src={dest.image} 
                     alt={dest.country} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   />
                 </div>
                 <div className="flex-grow text-center sm:text-left">
-                  <h3 className="text-4xl font-extrabold text-[#15803d] mb-4 font-serif flex items-center justify-center sm:justify-start gap-4">
-                    <span className="text-[#FF5733]"><MapPin className="w-8 h-8" /></span>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#15803d] mb-6 font-serif flex items-center justify-center sm:justify-start gap-4 pr-1">
+                    <span className="text-[#FF5733]"><MapPin className="w-8 h-8 md:w-10 md:h-10" /></span>
                     {dest.country}
                   </h3>
-                  <ul className="space-y-3">
+                  <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                     {dest.highlights.map((point, idx) => (
-                      <li key={idx} className="flex items-center justify-center sm:justify-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-[#FF5733] flex-shrink-0" />
-                        <span className="text-slate-600 font-bold text-xs md:text-sm tracking-wide uppercase">{point}</span>
-                      </li>
+                      <div key={idx} className="flex items-center gap-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-xl">
+                        <CheckCircle className="w-4 h-4 text-[#FF5733] flex-shrink-0" />
+                        <span className="text-slate-700 font-black text-[10px] tracking-widest uppercase">{point}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
 
-              {/* Specific Universities */}
-              <div className="bg-slate-50/50 rounded-3xl p-6 md:p-8 border border-slate-100/80">
-                <h4 className="flex items-center gap-2 text-[#15803d] font-black text-lg mb-6 uppercase tracking-widest border-b border-[#15803d]/10 pb-4">
-                  <GraduationCap className="text-[#FF5733]" />
-                  Top Universities
+              {/* Specific Universities Preview */}
+              <div className="bg-slate-50/80 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative z-10">
+                <h4 className="flex items-center gap-3 text-[#15803d] font-black text-xl mb-10 uppercase tracking-widest border-b border-[#15803d]/20 pb-6 font-serif">
+                  <GraduationCap className="text-[#FF5733] w-8 h-8" />
+                  Premier Institutions
                 </h4>
                 
                 {dest.medicalUniversities && (
-                  <div className="mb-6">
-                    <h5 className="flex items-center gap-2 text-slate-700 font-bold text-sm mb-4 uppercase tracking-tighter">
-                      <Stethoscope className="w-4 h-4 text-[#15803d]" />
-                      Medical Institutions
+                  <div className="mb-10">
+                    <h5 className="flex items-center gap-2 text-slate-500 font-black text-xs mb-6 uppercase tracking-[0.2em]">
+                      <Stethoscope className="w-5 h-5 text-[#15803d]" />
+                      Leading Medical Hubs
                     </h5>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {dest.medicalUniversities.map((univ, idx) => (
-                        <div key={idx} className="flex gap-3 items-center p-2 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#FF5733]/30 transition-all">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {dest.medicalUniversities.slice(0, 4).map((univ, idx) => (
+                        <Link 
+                          key={idx} 
+                          to={`/college/${univ.id}`}
+                          className="flex gap-4 items-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-[#FF5733]/30 transition-all group/univ"
+                        >
                           {typeof univ === 'object' && univ.images && univ.images[0] ? (
-                            <img src={univ.images[0]} alt={univ.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
+                            <img src={univ.images[0]} alt={univ.name} className="w-14 h-14 rounded-xl object-cover shrink-0" />
                           ) : (
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#FF5733] shrink-0 ml-2" />
+                            <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center font-black text-[#FF5733] group-hover/univ:bg-[#FF5733] group-hover/univ:text-white transition-colors">{idx + 1}</div>
                           )}
-                          <span className="text-slate-700 text-sm font-semibold">{univ.name || univ}</span>
-                        </div>
+                          <span className="text-slate-800 text-sm font-black leading-tight group-hover/univ:text-[#15803d] transition-colors">{univ.name || univ}</span>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 )}
 
-                {dest.engineeringUniversities && (
-                  <div>
-                    <h5 className="flex items-center gap-2 text-slate-700 font-bold text-sm mb-4 uppercase tracking-tighter">
-                      <GraduationCap className="w-4 h-4 text-[#15803d]" />
-                      Engineering Institutions
-                    </h5>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {dest.engineeringUniversities.map((univ, idx) => (
-                        <div key={idx} className="flex gap-3 items-center p-2 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#15803d]/30 transition-all">
-                          {typeof univ === 'object' && univ.images && univ.images[0] ? (
-                            <img src={univ.images[0]} alt={univ.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
-                          ) : (
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#15803d] shrink-0 ml-2" />
-                          )}
-                          <span className="text-slate-700 text-sm font-semibold">{univ.name || univ}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <Link 
+                  to={dest.country === "Russia" ? "/russia-colleges" : dest.country === "Georgia" ? "/georgia-colleges" : "#"}
+                  className="w-full bg-[#15803d] text-white py-5 rounded-3xl font-black text-center block hover:bg-[#14532d] transition-all shadow-xl hover:shadow-emerald-200 uppercase tracking-[0.2em] text-sm"
+                >
+                  Explore All {dest.country} Universities →
+                </Link>
               </div>
             </motion.div>
           ))}

@@ -221,7 +221,7 @@ export const tnUniversitiesData = [
         name: "JSS College of Pharmacy Ooty", 
         location: "Ooty", 
         courses: ["B.Pharm", "M.Pharm", "Pharm.D"], 
-        images: ["/images/colleges/karunya.jpg"],
+        images: ["/images/colleges/jss_pharmacy.jpg"],
         website: "https://jssuni.edu.in/"
       },
       { 
@@ -267,7 +267,6 @@ export const tnUniversitiesData = [
         id: "vit-law", 
         name: "VIT School of Law", 
         location: "Vellore", 
-        courses: ["LLB", "BA LLB", "BBA LLB"], 
         images: ["/images/colleges/vit.jpg"],
         website: "https://vit.ac.in/"
       }
@@ -278,14 +277,14 @@ export const tnUniversitiesData = [
 export const countriesData = [
   {
     country: "Russia",
-    image: "https://www.eklavyaoverseas.com/assets/images/immanuel-kant-baltic-federal-university.jpg",
+    image: "/images/colleges/russia_country.jpg",
     highlights: ["NMC & WHO Approved", "World-class infrastructure", "Affordable Fee Structure", "English Medium Curriculum"],
     medicalUniversities: [
       { 
         id: "kant-baltic", 
         name: "Immanuel Kant Baltic Federal University", 
         location: "Kaliningrad, Russia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/immanuel-kant-baltic-federal-university.jpg"],
+        images: ["/images/colleges/kant_baltic.jpg"],
         about: "Immanuel Kant Baltic Federal University (IKBFU) is a premier government institution in Kaliningrad. It is strategically located in the European part of Russia and is known for its high clinical standards and international research output.",
         infrastructure: "The university boasts a state-of-the-art medical campus, advanced robotics labs, and comprehensive clinical training at the University Hospital. It provides modern hostels and dedicated Indian mess facilities.",
         courses: ["General Medicine (MBBS)", "Dental Medicine", "Pediatrics"],
@@ -295,7 +294,7 @@ export const countriesData = [
         id: "mephi-obninsk", 
         name: "National Research Nuclear University MEPhI (Medical Institute)", 
         location: "Obninsk/Moscow, Russia", 
-        images: ["https://smapse.ru/storage/2018/11/converted/825_585_1img-9006-s.jpg"],
+        images: ["/images/colleges/mephi.jpg"],
         about: "MEPhI is one of Russia's most elite universities. Its Medical Institute is renowned for integrating nuclear medicine and high-tech research into clinical practice.",
         infrastructure: "State-of-the-art nuclear medicine labs, high-fidelity simulation centers, and massive clinical rotations at Russia's leading federal medical centers.",
         courses: ["General Medicine (MBBS)", "Medical Biophysics", "Nuclear Medicine"],
@@ -305,7 +304,7 @@ export const countriesData = [
         id: "kazan-federal", 
         name: "Kazan Federal University (Institute of Medicine)", 
         location: "Kazan, Russia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/kazan-federal-university.jpg"],
+        images: ["/images/colleges/kazan_med.jpg"],
         about: "With over 200 years of history, Kazan Federal is a jewel of Russian education. Its Institute of Medicine offers one of the most vibrant international environments in the country.",
         infrastructure: "Modern 'Wet Labs', anatomical museum, digital medicine center, and extensive student hostels with safety protocols.",
         courses: ["General Medicine (MBBS)", "Dental Medicine", "Pharmacy"],
@@ -315,7 +314,7 @@ export const countriesData = [
         id: "bashkir-state", 
         name: "Bashkir State Medical University", 
         location: "Ufa, Russia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/bashkir-state-medical-university.jpg"],
+        images: ["/images/colleges/bashkir_med.png"],
         about: "Bashkir State is a leader in medical education in the Volga region. It hosts one of the largest Indian student communities in Russia.",
         infrastructure: "Equipped with the finest robotic surgery center, University Clinic with 650+ beds, and a dedicated multi-story library.",
         courses: ["General Medicine (MBBS)", "Stomatology", "Preventive Medicine"],
@@ -325,7 +324,7 @@ export const countriesData = [
         id: "volgograd-state", 
         name: "Volgograd State Medical University", 
         location: "Volgograd, Russia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/volgograd-state-medical-university.jpg"],
+        images: ["/images/colleges/volgograd_med.jpg"],
         about: "Volgograd State has been a top choice for international students for over 60 years. It is globally recognized for its rigorous academic curriculum.",
         infrastructure: "Comprehensive clinical base with 10+ affiliated hospitals and strict security measures.",
         courses: ["General Medicine (MBBS)", "Dental Surgery", "Clinical Psychology"],
@@ -335,7 +334,7 @@ export const countriesData = [
         id: "kirov-state", 
         name: "Kirov State Medical University", 
         location: "Kirov, Russia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/kirov-state-medical-university.jpg"],
+        images: ["/images/colleges/kirov_med.jpg"],
         about: "Kirov State is known for its compact and friendly campus city. It offers high clinical exposure from the first year.",
         infrastructure: "Advanced diagnostic centers, simulation laboratories, and comfortable student housing.",
         courses: ["General Medicine (MBBS)", "Social Work"],
@@ -343,19 +342,19 @@ export const countriesData = [
       }
     ],
     engineeringUniversities: [
-      { id: "mai-moscow", name: "Moscow State Aviation Institute (MAI)", location: "Moscow, Russia", images: ["https://www.mbbsadmissionsinrussia.com/images/Moscow-Aviation-Institute.jpg"] }
+      { id: "mai-moscow", name: "Moscow State Aviation Institute (MAI)", location: "Moscow, Russia", images: ["/images/colleges/mai_moscow.jpg"] }
     ]
   },
   {
     country: "Georgia",
-    image: "https://www.eklavyaoverseas.com/assets/images/tbilisi-state-medical-university.jpg",
+    image: "/images/colleges/georgia_country.jpg",
     highlights: ["European Standards", "Safe Environment", "English Medium", "NMC/WHO Approved"],
     medicalUniversities: [
       { 
         id: "tbilisi-state", 
         name: "Tbilisi State Medical University", 
         location: "Tbilisi, Georgia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/tbilisi-state-medical-university.jpg"],
+        images: ["/images/colleges/tbilisi_med.jpg"],
         about: "The oldest and largest medical university in Georgia with a rich tradition of medical excellence.",
         infrastructure: "Large teaching hospitals, medical research centers, and international student facilities.",
         courses: ["Medicine", "Dentistry", "Public Health"],
@@ -365,7 +364,7 @@ export const countriesData = [
         id: "david-tvildiani", 
         name: "David Tvildiani Medical University", 
         location: "Tbilisi, Georgia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/david-tvildiani-medical-university.jpg"],
+        images: ["/images/colleges/david_tvildiani.jpg"],
         about: "Dedicated specifically to USMLE preparation and global medical standards.",
         infrastructure: "Modern simulation rooms, specialized libraries, and highly clinical focus.",
         courses: ["Doctor of Medicine (MD)"],
@@ -375,7 +374,7 @@ export const countriesData = [
         id: "georgian-national-seu", 
         name: "Georgian National University SEU", 
         location: "Tbilisi, Georgia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/georgian-national-university-seu.jpg"],
+        images: ["/images/colleges/georgia_national_seu.jpg"],
         about: "The largest private university in Georgia with high-tech infrastructure and modern curriculum.",
         infrastructure: "Largest campus library, high-tech labs, and student accommodation.",
         courses: ["General Medicine (English)"],
@@ -385,7 +384,7 @@ export const countriesData = [
         id: "caucasus-intl", 
         name: "Caucasus International University", 
         location: "Tbilisi, Georgia", 
-        images: ["https://www.eklavyaoverseas.com/assets/images/caucasus-international-university.jpg"],
+        images: ["/images/colleges/caucasus_intl.jpg"],
         about: "A leading private university known for its international atmosphere and support for Indian students.",
         infrastructure: "Modern clinical laboratories, vibrant campus, and dedicated student support.",
         courses: ["Medicine", "Pharmacy", "Dentistry"],

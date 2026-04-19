@@ -24,15 +24,16 @@ const Navbar = () => {
 
   const mainLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Owner', path: '/founder' },
+    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
+    { name: 'Founder', path: '/founder' },
   ];
 
   const collegeLinks = [
-    { name: 'Study Abroad (MBBS)', path: '/countries' },
     { name: 'TN Universities', path: '/tn-colleges' },
-    { name: 'Study in Russia', path: '/russia-colleges' },
+    { name: 'Study Abroad (MBBS)', path: '/countries' },
     { name: 'Study in Georgia', path: '/georgia-colleges' },
+    { name: 'Study in Russia', path: '/russia-colleges' },
   ];
 
   return (

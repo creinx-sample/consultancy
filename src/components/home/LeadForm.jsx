@@ -49,9 +49,9 @@ const LeadForm = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden" id="counseling">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-16 items-start">
           
-          <div className="w-full lg:w-1/2 text-center lg:text-left">
+          <div className="w-full lg:w-1/2 text-center lg:text-left pt-2 lg:pt-8">
             <h2 className="text-[#FF5733] font-bold tracking-widest text-sm uppercase mb-2">Book Free Counseling</h2>
             <h3 className="text-4xl md:text-5xl font-extrabold text-[#15803d] mb-6 leading-tight">
               Fill The <span className="text-[#FF5733]">Enrollment Form</span>

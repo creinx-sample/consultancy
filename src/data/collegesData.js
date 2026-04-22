@@ -96,8 +96,11 @@ export const tnUniversitiesData = [
         id: "jeppiaar-univ", 
         name: "Jeppiaar University", 
         location: "Chennai", 
-        courses: ["Engineering", "Arts", "Science", "Management"], 
+        courses: ["B.E", "B.Tech", "M.Tech", "MBA"], 
         images: ["/images/colleges/india/tn/jeppiaar.png"],
+        about: "Jeppiaar University is a premier institution in Chennai dedicated to providing high-quality engineering and management education. With a focus on research and industrial collaboration, it prepares students for global careers.",
+        infrastructure: "State-of-the-art computer labs, high-tech engineering workshops, advanced research centers, and a sprawling green campus with modern sports facilities.",
+        highlights: ["NBA Accredited", "Tier-1 Placement Records", "Advanced R&D Focus", "International Student Programs"],
         website: "https://jeppiaaruniversity.ac.in/"
       }
     ]
@@ -566,7 +569,16 @@ export const countriesData = [
       }
     ],
     engineeringUniversities: [
-      { id: "mai-moscow", name: "Moscow State Aviation Institute (MAI)", location: "Moscow, Russia", images: ["/images/colleges/foreign/russia/mai_moscow.jpg"] }
+      { 
+        id: "mai-moscow", 
+        name: "Moscow State Aviation Institute (MAI)", 
+        location: "Moscow, Russia", 
+        images: ["/images/colleges/foreign/russia/mai_moscow.jpg"],
+        about: "Moscow Aviation Institute (National Research University) is one of the world's leading aerospace universities. Since its founding in 1930, MAI has been a leader in the development of the aerospace industry, producing hundreds of general designers and chief engineers.",
+        infrastructure: "MAI possesses a unique research and laboratory base, including 22 wind tunnels, state-of-the-art computer centers, a flight simulation center, and its own training airfield.",
+        courses: ["Aerospace Engineering", "Control Systems and Informatics", "Aircraft Engines", "Management in Tech"],
+        highlights: ["Direct Link to Boeing & Sukhoi", "National Research University", "World-Leading Aerospace Hub", "Flight Training airfield"]
+      }
     ]
   },
   {

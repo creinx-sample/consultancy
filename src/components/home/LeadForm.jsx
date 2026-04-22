@@ -48,26 +48,28 @@ const LeadForm = () => {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden" id="counseling">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--color-secondary)]/5 rounded-full blur-[100px] -mr-64 -mt-64" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           
           <div className="w-full lg:w-1/2 text-center lg:text-left pt-2 lg:pt-8">
-            <h2 className="text-[#FF5733] font-bold tracking-widest text-sm uppercase mb-2">Book Free Counseling</h2>
-            <h3 className="text-4xl md:text-5xl font-extrabold text-[#15803d] mb-6 leading-tight">
-              Fill The <span className="text-[#FF5733]">Enrollment Form</span>
+            <h2 className="text-[var(--color-secondary)] font-black tracking-[0.2em] text-sm uppercase mb-4">Book Free Counseling</h2>
+            <h3 className="text-4xl md:text-7xl font-black text-[var(--color-primary)] mb-8 leading-tight font-serif uppercase tracking-tighter">
+              Fill The <br /><span className="text-[var(--color-secondary)]">Enrollment</span> Form
             </h3>
-            <p className="text-slate-600 text-lg mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+            <p className="text-slate-500 text-lg md:text-xl mb-12 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
               Join thousands of students who have entrusted their dreams to us. Fill out your details below and our expert counselors will analyze your profile and category to suggest the best institutions.
             </p>
             
-            <div className="bg-slate-50 p-8 rounded-2xl border-l-[12px] border-[#15803d] shadow-md max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0">
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-[#15803d]/10 rounded-full flex items-center justify-center">
-                  <User className="w-8 h-8 text-[#15803d]" />
+            <div className="bg-slate-50 p-8 rounded-[2rem] border-l-[12px] border-[var(--color-primary)] shadow-2xl shadow-indigo-100 max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0 relative group overflow-hidden transition-all hover:bg-white">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--color-secondary)]/5 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150" />
+              <div className="flex items-center gap-6 relative z-10">
+                <div className="w-16 h-16 bg-[var(--color-primary)] rounded-2xl flex items-center justify-center shadow-lg rotate-3 group-hover:rotate-0 transition-transform">
+                  <User className="w-8 h-8 text-[var(--color-secondary)]" />
                 </div>
-                <div className="text-left font-serif">
-                  <p className="text-[#15803d] font-extrabold text-2xl uppercase tracking-tighter">Expert Analysis</p>
-                  <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">Profile Evaluated by Top Counselors</p>
+                <div className="text-left">
+                  <p className="text-[var(--color-primary)] font-black text-2xl uppercase tracking-tighter font-serif">Expert Analysis</p>
+                  <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">Profile Evaluated by Top Counselors</p>
                 </div>
               </div>
             </div>
@@ -75,47 +77,47 @@ const LeadForm = () => {
 
           <div className="w-full lg:w-1/2">
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 relative"
+              className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-2xl shadow-indigo-100 border border-slate-100 relative overflow-hidden"
             >
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">Full Name</label>
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)]" />
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="group">
+                  <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">Full Name</label>
                   <input 
                     required 
                     type="text" 
                     name="name" 
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] focus:border-transparent transition-all bg-slate-50 font-medium"
-                    placeholder="Enter your student name"
+                    className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:border-transparent transition-all bg-slate-50 font-bold text-slate-700 placeholder:text-slate-300 shadow-inner"
+                    placeholder="Enter student name"
                   />
                 </div>
 
-                <div className="flex gap-5">
-                  <div className="w-1/2">
-                    <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">Age</label>
+                <div className="flex gap-6">
+                  <div className="w-1/2 group">
+                    <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">Age</label>
                     <input 
                       required 
                       type="number" 
                       name="age" 
                       value={formData.age}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
-                      placeholder="E.g. 18"
+                      className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner"
+                      placeholder="e.g. 18"
                     />
                   </div>
-                  <div className="w-1/2">
-                    <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">Gender</label>
+                  <div className="w-1/2 group">
+                    <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">Gender</label>
                     <select 
                       required 
                       name="gender" 
                       value={formData.gender}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
+                      className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner cursor-pointer"
                     >
                       <option value="" disabled>Select Gender</option>
                       <option value="Male">Male</option>
@@ -125,41 +127,41 @@ const LeadForm = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-5">
-                  <div className="w-1/2">
-                    <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">10th Percentage</label>
+                <div className="flex gap-6">
+                  <div className="w-1/2 group">
+                    <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">10th Percentage</label>
                     <input 
                       required 
                       type="text" 
                       name="tenthPercent" 
                       value={formData.tenthPercent}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
-                      placeholder="E.g. 95%"
+                      className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner"
+                      placeholder="e.g. 95%"
                     />
                   </div>
-                  <div className="w-1/2">
-                    <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">12th Percentage</label>
+                  <div className="w-1/2 group">
+                    <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">12th Percentage</label>
                     <input 
                       required 
                       type="text" 
                       name="twelfthPercent" 
                       value={formData.twelfthPercent}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
-                      placeholder="E.g. 98%"
+                      className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner"
+                      placeholder="e.g. 98%"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">Board of Education</label>
+                <div className="group">
+                  <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">Board of Education</label>
                   <select 
                     required 
                     name="board" 
                     value={formData.board}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
+                    className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner cursor-pointer"
                   >
                     <option value="" disabled>Select Board</option>
                     <option value="CBSE">CBSE</option>
@@ -169,15 +171,15 @@ const LeadForm = () => {
                   </select>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-5">
-                  <div className="w-full sm:w-1/2">
-                    <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">Community / Caste</label>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="w-full sm:w-1/2 group">
+                    <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">Community / Caste</label>
                     <select 
                       required 
                       name="caste" 
                       value={formData.caste}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
+                      className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner cursor-pointer"
                     >
                       <option value="" disabled>Select Option</option>
                       <option value="General (OC)">General (OC)</option>
@@ -186,14 +188,14 @@ const LeadForm = () => {
                       <option value="SC/ST">SC/ST</option>
                     </select>
                   </div>
-                  <div className="w-full sm:w-1/2">
-                    <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">First Graduate?</label>
+                  <div className="w-full sm:w-1/2 group">
+                    <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">First Graduate?</label>
                     <select 
                       required 
                       name="firstGraduate" 
                       value={formData.firstGraduate}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
+                      className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner cursor-pointer"
                     >
                       <option value="" disabled>Select Option</option>
                       <option value="Yes">Yes</option>
@@ -202,25 +204,25 @@ const LeadForm = () => {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-bold text-[#15803d] uppercase tracking-wider mb-2">Desired Stream / College</label>
+                <div className="group">
+                  <label className="block text-[10px] font-black text-[var(--color-primary)] uppercase tracking-[0.2em] mb-2 px-1">Desired Stream / College</label>
                   <input 
                     required 
                     type="text" 
                     name="stream" 
                     value={formData.stream}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF5733] transition-all bg-slate-50 font-medium"
-                    placeholder="E.g. MBBS Abroad or Eng. in Chennai"
+                    className="w-full px-6 py-5 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] transition-all bg-slate-50 font-bold text-slate-700 shadow-inner"
+                    placeholder="e.g. MBBS Abroad or Eng. in Chennai"
                   />
                 </div>
 
                 <button 
                   type="submit" 
-                  className="w-full flex items-center justify-center gap-2 bg-[#FF5733] text-white font-bold py-5 rounded-md shadow-lg hover:bg-[#E64A19] transition-all group mt-6 uppercase tracking-widest text-lg"
+                  className="w-full flex items-center justify-center gap-3 bg-[var(--color-primary)] text-[var(--color-secondary)] border-2 border-[var(--color-secondary)] font-black py-6 rounded-2xl shadow-xl hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-all group mt-8 uppercase tracking-[0.2em] text-lg active:scale-95"
                 >
                    Enroll Support Now
-                  <Send className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+                  <Send className="w-6 h-6 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
             </motion.div>

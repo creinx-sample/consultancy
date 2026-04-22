@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import TamilNaduColleges from './pages/TamilNaduColleges';
 import RussiaColleges from './pages/RussiaColleges';
 import GeorgiaColleges from './pages/GeorgiaColleges';
+import ChatBot from './components/layout/ChatBot';
 import CollegeDetail from './pages/CollegeDetail';
 import Founder from './pages/Founder';
 
@@ -35,6 +36,7 @@ function App() {
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <ChatBot />
       </div>
     </Router>
   );

@@ -41,10 +41,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-[#FF5733] p-1.5 rounded-lg group-hover:rotate-12 transition-transform duration-300">
-              <GraduationCap className="h-6 w-6 text-white" />
+            <div className="bg-[var(--color-secondary)] p-1.5 rounded-lg group-hover:rotate-12 transition-transform duration-300">
+              <GraduationCap className="h-6 w-6 text-[var(--color-primary)]" />
             </div>
-            <span className={`text-xl md:text-2xl font-black tracking-tighter ${isScrolled ? 'text-[#15803d]' : 'text-[#15803d]'}`}>TNAEC</span>
+            <span className={`text-xl md:text-2xl font-black tracking-tighter ${isScrolled ? 'text-[var(--color-primary)]' : 'text-[var(--color-primary)]'}`}>TNAEC</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -53,8 +53,8 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-xs font-black uppercase tracking-widest hover:text-[#FF5733] transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#FF5733] after:transition-all hover:after:w-full ${
-                  location.pathname === link.path ? 'text-[#FF5733] after:w-full' : 'text-slate-700'
+                className={`text-xs font-black uppercase tracking-widest hover:text-[var(--color-secondary)] transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[var(--color-secondary)] after:transition-all hover:after:w-full ${
+                  location.pathname === link.path ? 'text-[var(--color-secondary)] after:w-full' : 'text-slate-700'
                 }`}
               >
                 {link.name}
@@ -65,8 +65,8 @@ const Navbar = () => {
             <div className="relative group">
               <button
                 onMouseEnter={() => setIsDropdownOpen(true)}
-                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest hover:text-[#FF5733] transition-all ${
-                  collegeLinks.some(l => l.path === location.pathname) ? 'text-[#FF5733]' : 'text-slate-700'
+                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest hover:text-[var(--color-secondary)] transition-all ${
+                  collegeLinks.some(l => l.path === location.pathname) ? 'text-[var(--color-secondary)]' : 'text-slate-700'
                 }`}
               >
                 Top Programs
@@ -86,7 +86,7 @@ const Navbar = () => {
                       <Link
                         key={link.name}
                         to={link.path}
-                        className="block px-8 py-3.5 text-xs font-black uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-[#15803d] transition-all"
+                        className="block px-8 py-3.5 text-xs font-black uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-[var(--color-primary)] transition-all"
                       >
                         {link.name}
                       </Link>
@@ -98,26 +98,32 @@ const Navbar = () => {
 
             <Link
               to="/contact"
-              className={`text-xs font-black uppercase tracking-widest hover:text-[#FF5733] transition-all ${
-                location.pathname === '/contact' ? 'text-[#FF5733]' : 'text-slate-700'
+              className={`text-xs font-black uppercase tracking-widest hover:text-[var(--color-secondary)] transition-all ${
+                location.pathname === '/contact' ? 'text-[var(--color-secondary)]' : 'text-slate-700'
               }`}
             >
               Contact
             </Link>
 
-            <Link
-              to="/contact"
-              className="bg-[#15803d] text-white px-8 py-3.5 rounded-2xl font-black hover:bg-[#166534] transition-all shadow-[0_10px_20px_rgba(21,128,61,0.2)] hover:shadow-[0_15px_30px_rgba(21,128,61,0.3)] hover:-translate-y-0.5 uppercase text-[10px] tracking-[0.2em]"
+            <button
+              onClick={() => {
+                if (window.location.pathname === '/') {
+                  document.getElementById('counseling')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#counseling';
+                }
+              }}
+              className="bg-[var(--color-primary)] text-[var(--color-secondary)] px-8 py-3.5 rounded-2xl font-black border-2 border-[var(--color-secondary)] hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-all shadow-[0_10px_20px_rgba(30,27,75,0.1)] hover:shadow-[0_15px_30px_rgba(234,179,8,0.2)] hover:-translate-y-0.5 uppercase text-[10px] tracking-[0.2em]"
             >
               Enroll Now
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-[#15803d] transition-colors"
+              className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-[var(--color-primary)] transition-colors"
             >
               <AnimatePresence mode="wait">
                 {isOpen ? (
@@ -150,7 +156,7 @@ const Navbar = () => {
                   key={link.name}
                   to={link.path}
                   className={`block px-4 py-4 rounded-2xl text-sm font-black uppercase tracking-widest transition-all ${
-                    location.pathname === link.path ? 'bg-slate-50 text-[#FF5733]' : 'text-slate-700'
+                    location.pathname === link.path ? 'bg-slate-50 text-[var(--color-secondary)]' : 'text-slate-700'
                   }`}
                 >
                   {link.name}
@@ -164,7 +170,7 @@ const Navbar = () => {
                     key={link.name}
                     to={link.path}
                     className={`block px-4 py-4 rounded-2xl text-sm font-black uppercase tracking-widest transition-all ${
-                      location.pathname === link.path ? 'bg-slate-50 text-[#FF5733]' : 'text-slate-700'
+                      location.pathname === link.path ? 'bg-slate-50 text-[var(--color-secondary)]' : 'text-slate-700'
                     }`}
                   >
                     {link.name}
@@ -175,9 +181,9 @@ const Navbar = () => {
               <div className="pt-8">
                 <Link
                   to="/contact"
-                  className="block text-center bg-[#15803d] text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs shadow-xl shadow-emerald-100"
+                  className="block text-center bg-[var(--color-primary)] text-[var(--color-secondary)] border-2 border-[var(--color-secondary)] py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs shadow-xl shadow-indigo-100"
                 >
-                  Apply Selection 2024
+                  Join the Next Batch 2024
                 </Link>
               </div>
             </div>

@@ -6,8 +6,8 @@ const Founder = () => {
   return (
     <div className="pt-24 min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-[#15803d] py-32 text-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FF5733]/10 rounded-full blur-[120px]" />
+      <div className="bg-[var(--color-primary)] py-32 text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/10 rounded-full blur-[120px]" />
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4">
@@ -26,16 +26,16 @@ const Founder = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-full mb-10"
           >
-            <Award className="w-6 h-6 text-[#FF5733]" />
+            <Award className="w-6 h-6 text-[var(--color-secondary)]" />
             <span className="text-white text-sm font-black tracking-[0.2em] uppercase">The Visionary Leader</span>
           </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-8xl font-black text-white mb-8 font-serif leading-tight"
+            className="text-5xl md:text-8xl font-black text-white mb-8 font-serif leading-tight uppercase tracking-tighter"
           >
-            Message from <br /><span className="text-[#FF5733]">the Founder</span>
+            MESSAGE FROM <br /><span className="text-[var(--color-secondary)]">THE FOUNDER</span>
           </motion.h1>
           
           <motion.p 
@@ -60,9 +60,9 @@ const Founder = () => {
               viewport={{ once: true }}
               className="bg-white p-12 md:p-20 rounded-[4rem] shadow-2xl shadow-slate-200 border border-slate-100 relative"
             >
-              <Quote className="absolute top-12 left-12 w-20 h-20 text-slate-50 opacity-10" />
+              <Quote className="absolute top-12 left-12 w-20 h-20 text-[var(--color-primary)] opacity-5" />
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-black text-[#15803d] mb-8 font-serif">Bridging Dreams & Reality</h2>
+                <h2 className="text-3xl md:text-5xl font-black text-[var(--color-primary)] mb-10 font-serif leading-tight">Bridging <span className="text-[var(--color-secondary)]">Dreams</span> & <span className="text-[var(--color-secondary)]">Reality</span></h2>
                 <div className="space-y-6 text-slate-600 font-medium text-lg leading-loose">
                   <p>
                     With over a decade of experience in international education consultancy, I have witnessed first-hand the challenges students face when pursuing professional degrees abroad. My mission was born from a simple realization: every student deserves transparent, ethical, and high-quality guidance to navigate the global academic landscape.
@@ -95,10 +95,10 @@ const Founder = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100"
+                  className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all"
                 >
-                  <item.icon className="w-12 h-12 text-[#FF5733] mb-6" />
-                  <h3 className="text-2xl font-black text-[#15803d] mb-4 uppercase tracking-tighter">{item.title}</h3>
+                  <item.icon className="w-12 h-12 text-[var(--color-secondary)] mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-2xl font-black text-[var(--color-primary)] mb-4 uppercase tracking-tighter font-serif">{item.title}</h3>
                   <p className="text-slate-600 font-bold leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -111,10 +111,10 @@ const Founder = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-[#15803d] p-12 rounded-[3.5rem] text-white shadow-xl relative overflow-hidden"
+              className="bg-[var(--color-primary)] p-12 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-100 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
-              <h3 className="text-2xl font-black mb-10 uppercase tracking-widest border-b border-white/20 pb-6">Track Record</h3>
+              <h3 className="text-2xl font-black mb-10 uppercase tracking-widest border-b border-white/20 pb-6 text-[var(--color-secondary)]">Track Record</h3>
               <div className="space-y-8">
                 {[
                   { label: "Students Guided", value: "2500+" },
@@ -123,8 +123,8 @@ const Founder = () => {
                   { label: "Years of Trust", value: "10+" }
                 ].map((stat, i) => (
                   <div key={i}>
-                    <p className="text-white/60 text-xs font-black uppercase tracking-widest mb-1">{stat.label}</p>
-                    <p className="text-4xl font-black text-[#FF5733]">{stat.value}</p>
+                    <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.2em] mb-1">{stat.label}</p>
+                    <p className="text-5xl font-black text-white tracking-tighter">{stat.value}</p>
                   </div>
                 ))}
               </div>
@@ -137,11 +137,11 @@ const Founder = () => {
               transition={{ delay: 0.1 }}
               className="bg-white p-10 rounded-[3.5rem] border border-slate-100 shadow-lg"
             >
-              <h3 className="text-xl font-black text-[#15803d] mb-8 uppercase tracking-widest">Core Values</h3>
+              <h3 className="text-xl font-black text-[var(--color-primary)] mb-8 uppercase tracking-widest border-b border-slate-100 pb-4">Core Values</h3>
               <div className="space-y-4">
                 {["Transparency", "Personalized Mentoriship", "Post-Admission Support", "Global Network"].map((v, i) => (
                   <div key={i} className="flex gap-4 items-center">
-                    <CheckCircle className="w-5 h-5 text-[#FF5733]" />
+                    <CheckCircle className="w-5 h-5 text-[var(--color-secondary)]" />
                     <span className="text-slate-700 font-bold">{v}</span>
                   </div>
                 ))}

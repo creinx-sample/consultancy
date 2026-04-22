@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #15803d; /* emerald-700 */
-  --color-primary-dark: #166534; /* emerald-800 */
-  --color-secondary: #FF5733;
-  --color-secondary-dark: #E64A19;
-  --color-accent: #FFC107;
+  --color-primary: #4c0519; /* Deep Burgundy */
+  --color-primary-dark: #2d0611;
+  --color-secondary: #fbbf24; /* Champagne Gold */
+  --color-secondary-dark: #ca8a04;
+  --color-accent: #f87171; /* Rose accent */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 }

@@ -28,8 +28,8 @@ const WhyChooseUs = () => {
           
           {/* Left Content */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-[#FF5733] font-bold tracking-widest text-sm uppercase mb-2">Why Choose Us</h2>
-            <h3 className="text-4xl font-extrabold text-[#15803d] mb-6 leading-tight">
+            <h2 className="text-secondary font-bold tracking-widest text-sm uppercase mb-2">Why Choose Us</h2>
+            <h3 className="text-4xl font-extrabold text-primary mb-6 leading-tight">
               A Legacy of Trust <br/> in Education.
             </h3>
             <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
@@ -47,10 +47,10 @@ const WhyChooseUs = () => {
                   className="flex items-start gap-4"
                 >
                   <div className="mt-1">
-                    <CheckCircle2 className="w-6 h-6 text-[#FF5733]" />
+                    <CheckCircle2 className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#15803d] mb-1">{point.title}</h4>
+                    <h4 className="text-lg font-bold text-primary mb-1">{point.title}</h4>
                     <p className="text-slate-500 text-sm font-medium">{point.description}</p>
                   </div>
                 </motion.div>
@@ -60,18 +60,18 @@ const WhyChooseUs = () => {
 
           {/* Right Visual/Image Area */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="absolute inset-0 bg-[#15803d]/5 rounded-3xl -rotate-6 transform scale-105 z-0"></div>
+            <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-6 transform scale-105 z-0"></div>
             <img 
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop" 
               alt="Our Team" 
               className="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover border-8 border-white"
             />
             
-            <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-xl z-20 hidden md:block border-l-8 border-[#FF5733]">
+            <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-xl z-20 hidden md:block border-l-8 border-secondary">
               <div className="flex items-center gap-4">
-                < Award className="w-10 h-10 text-[#15803d]" />
+                < Award className="w-10 h-10 text-primary" />
                 <div>
-                  <p className="text-[#15803d] font-extrabold text-2xl uppercase tracking-tighter italic">Top Rated</p>
+                  <p className="text-primary font-extrabold text-2xl uppercase tracking-tighter italic">Top Rated</p>
                   <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">Consultancy in TN</p>
                 </div>
               </div>

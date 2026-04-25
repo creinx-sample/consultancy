@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Hero from '../components/home/Hero';
 import ServicesSection from '../components/home/ServicesSection';
+import Reviews from '../components/home/Reviews';
 import GlobalPartners from '../components/home/GlobalPartners';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import LeadForm from '../components/home/LeadForm';
@@ -14,6 +15,7 @@ const Home = () => {
     <div className="w-full overflow-hidden">
       <Hero />
       <ServicesSection />
+      <Reviews />
       <GlobalPartners />
       <WhyChooseUs />
       <LeadForm />

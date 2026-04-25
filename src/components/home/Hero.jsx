@@ -25,23 +25,23 @@ const Hero = () => {
           className="w-full lg:w-1/2 text-center lg:text-left space-y-10"
         >
           <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}>
-            <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-[var(--color-primary)]/5 text-[var(--color-primary)] text-xs font-black tracking-[0.3em] mb-8 border border-[var(--color-primary)]/10 uppercase">
-              <Globe className="w-4 h-4 text-[var(--color-secondary)]" />
+            <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-primary/5 text-primary text-xs font-black tracking-[0.3em] mb-8 border border-primary/10 uppercase">
+              <Globe className="w-4 h-4 text-secondary" />
               Expert Education Consultancy
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-black text-[var(--color-primary)] leading-[1.1] tracking-tighter font-serif">
+            <h1 className="text-5xl md:text-6xl lg:text-8xl font-black text-primary leading-[1.1] tracking-tighter font-serif">
               Lead Your <br/>
-              <span className="text-[var(--color-secondary)] relative">
+              <span className="text-secondary relative">
                 Academic Journey
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[var(--color-secondary)]/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-secondary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="4" />
                 </svg>
               </span>
             </h1>
             
             <p className="mt-8 text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              Join 5,000+ students who secured admissions in elite MBBS and Engineering universities across <span className="text-[var(--color-primary)] font-black underline decoration-[var(--color-secondary)] decoration-4">India, Russia, and Georgia</span>.
+              Join 5,000+ students who secured admissions in elite MBBS and Engineering universities across <span className="text-primary font-black underline decoration-secondary decoration-4">India, Russia, and Georgia</span>.
             </p>
           </motion.div>
 
@@ -51,7 +51,7 @@ const Hero = () => {
           >
             <Link 
               to="/contact" 
-              className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-[var(--color-primary)] text-white font-black text-sm hover:scale-105 transition-all shadow-[0_20px_50px_rgba(30,27,75,0.2)] flex items-center justify-center gap-3 group uppercase tracking-[0.2em]"
+              className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-primary text-white font-black text-sm hover:scale-105 transition-all shadow-[0_20px_50px_rgba(30,27,75,0.2)] flex items-center justify-center gap-3 group uppercase tracking-[0.2em]"
             >
               Enroll Now
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -63,7 +63,7 @@ const Hero = () => {
                 e.preventDefault();
                 document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-white text-[var(--color-primary)] font-black text-sm border-2 border-[var(--color-primary)]/10 hover:border-[var(--color-primary)] hover:bg-slate-50 transition-all shadow-xl flex items-center justify-center uppercase tracking-[0.2em]"
+              className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-white text-primary font-black text-sm border-2 border-primary/10 hover:border-primary hover:bg-slate-50 transition-all shadow-xl flex items-center justify-center uppercase tracking-[0.2em]"
             >
               Explore Programs
             </a>
@@ -74,12 +74,12 @@ const Hero = () => {
             variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "backOut" } } }}
           >
             <div className="flex flex-col items-start translate-y-0 hover:-translate-y-1 transition-transform duration-300">
-              <span className="text-5xl font-black text-[var(--color-primary)] tracking-tighter">10+</span>
+              <span className="text-5xl font-black text-primary tracking-tighter">10+</span>
               <span className="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mt-1">Years Legacy</span>
             </div>
             <div className="w-px h-12 bg-slate-200"></div>
             <div className="flex flex-col items-start translate-y-0 hover:-translate-y-1 transition-transform duration-300">
-              <span className="text-5xl font-black text-[var(--color-primary)] tracking-tighter">5K+</span>
+              <span className="text-5xl font-black text-primary tracking-tighter">5K+</span>
               <span className="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mt-1">Success Stories</span>
             </div>
           </motion.div>
@@ -93,8 +93,8 @@ const Hero = () => {
           transition={{ duration: 1.2, delay: 0.4, type: "spring", stiffness: 100 }}
         >
           <div className="relative">
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-[var(--color-secondary)]/10 rounded-full blur-[100px] z-0"></div>
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-[var(--color-primary)]/10 rounded-full blur-[100px] z-0"></div>
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] z-0"></div>
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px] z-0"></div>
             
             <div className="relative z-10 p-4 bg-white rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-slate-50 rotate-3 transform hover:rotate-0 transition-transform duration-700">
               <img 
@@ -115,7 +115,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <span className="block text-xs font-black text-slate-400 uppercase tracking-widest">Global Partners</span>
-                    <span className="text-xl font-black text-[var(--color-primary)]">120+ Universities</span>
+                    <span className="text-xl font-black text-primary">120+ Universities</span>
                   </div>
                 </div>
               </motion.div>

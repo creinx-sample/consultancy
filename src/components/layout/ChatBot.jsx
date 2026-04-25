@@ -54,11 +54,11 @@ const ChatBot = () => {
       {/* Floating Trigger */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-6 z-50 bg-[var(--color-primary)] text-[var(--color-secondary)] p-4 rounded-full shadow-[0_10px_40px_rgba(30,27,75,0.3)] border-2 border-[var(--color-secondary)] hover:scale-110 active:scale-95 transition-all group overflow-hidden"
+        className="fixed bottom-24 right-6 z-50 bg-primary text-secondary p-4 rounded-full shadow-[0_10px_40px_rgba(30,27,75,0.3)] border-2 border-secondary hover:scale-110 active:scale-95 transition-all group overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[var(--color-secondary)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+        <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
         <MessageSquare className="w-7 h-7 relative z-10" />
-        <span className="absolute right-full mr-4 bg-[var(--color-primary)] text-[var(--color-secondary)] text-[10px] py-2 px-6 rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap font-black border border-[var(--color-secondary)]/30 uppercase tracking-[0.2em] translate-x-4 group-hover:translate-x-0">
+        <span className="absolute right-full mr-4 bg-primary text-secondary text-[10px] py-2 px-6 rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap font-black border border-secondary/30 uppercase tracking-[0.2em] translate-x-4 group-hover:translate-x-0">
           Ask AI Counselor
         </span>
       </button>
@@ -73,14 +73,14 @@ const ChatBot = () => {
             className="fixed bottom-24 right-6 z-50 w-[380px] h-[600px] bg-white rounded-[3rem] shadow-[0_30px_100px_rgba(30,27,75,0.4)] border border-slate-100 overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="bg-[var(--color-primary)] p-8 text-white flex justify-between items-center relative">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-secondary)]/10 rounded-full -mr-16 -mt-16 blur-2xl" />
+            <div className="bg-primary p-8 text-white flex justify-between items-center relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -mr-16 -mt-16 blur-2xl" />
               <div className="flex items-center gap-4 relative z-10">
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 rotate-3 shadow-lg">
-                  <Bot className="w-7 h-7 text-[var(--color-secondary)]" />
+                  <Bot className="w-7 h-7 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-black text-sm uppercase tracking-[0.2em] text-[var(--color-secondary)]">TNAEC Support</h3>
+                  <h3 className="font-black text-sm uppercase tracking-[0.2em] text-secondary">TNAEC Support</h3>
                   <div className="flex items-center gap-2 mt-1">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_#10b981]" />
                     <span className="text-[10px] font-black text-white/50 uppercase tracking-[0.1em]">Intelligence Online</span>
@@ -109,8 +109,8 @@ const ChatBot = () => {
                 >
                   <div className={`max-w-[85%] p-5 rounded-[2rem] text-sm font-bold leading-relaxed ${
                     msg.role === 'bot' 
-                      ? 'bg-white shadow-sm border border-slate-100 text-[var(--color-primary)] rounded-tl-none' 
-                      : 'bg-[var(--color-primary)] text-white rounded-tr-none shadow-xl shadow-indigo-100'
+                      ? 'bg-white shadow-sm border border-slate-100 text-primary rounded-tl-none' 
+                      : 'bg-primary text-white rounded-tr-none shadow-xl shadow-indigo-100'
                   }`}>
                     {msg.content}
                   </div>
@@ -119,9 +119,9 @@ const ChatBot = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="bg-white p-5 rounded-[2rem] rounded-tl-none shadow-sm flex gap-1.5 border border-slate-50">
-                    <div className="w-2 h-2 bg-[var(--color-secondary)] rounded-full animate-bounce [animation-delay:-0.3s]" />
-                    <div className="w-2 h-2 bg-[var(--color-secondary)] rounded-full animate-bounce [animation-delay:-0.15s]" />
-                    <div className="w-2 h-2 bg-[var(--color-secondary)] rounded-full animate-bounce" />
+                    <div className="w-2 h-2 bg-secondary rounded-full animate-bounce [animation-delay:-0.3s]" />
+                    <div className="w-2 h-2 bg-secondary rounded-full animate-bounce [animation-delay:-0.15s]" />
+                    <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" />
                   </div>
                 </div>
               )}
@@ -134,10 +134,10 @@ const ChatBot = () => {
                   <button
                     key={i}
                     onClick={() => handleSend(faq.q)}
-                    className="px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl text-[10px] font-black uppercase tracking-wider text-slate-500 hover:bg-[var(--color-primary)] hover:text-[var(--color-secondary)] hover:border-[var(--color-primary)] transition-all flex items-center gap-2 shadow-sm"
+                    className="px-5 py-3 bg-slate-50 border border-slate-100 rounded-2xl text-[10px] font-black uppercase tracking-wider text-slate-500 hover:bg-primary hover:text-secondary hover:border-primary transition-all flex items-center gap-2 shadow-sm"
                   >
                     {faq.q}
-                    <ChevronRight className="w-3 h-3 text-[var(--color-secondary)]" />
+                    <ChevronRight className="w-3 h-3 text-secondary" />
                   </button>
                 ))}
               </div>
@@ -152,11 +152,11 @@ const ChatBot = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSend(input)}
                   placeholder="Type your inquiry..."
-                  className="w-full pl-6 pr-16 py-5 bg-slate-50 rounded-2xl border border-slate-100 focus:border-[var(--color-secondary)] focus:ring-4 focus:ring-[var(--color-secondary)]/10 transition-all font-black text-sm text-[var(--color-primary)] placeholder:text-slate-300 shadow-inner"
+                  className="w-full pl-6 pr-16 py-5 bg-slate-50 rounded-2xl border border-slate-100 focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all font-black text-sm text-primary placeholder:text-slate-300 shadow-inner"
                 />
                 <button
                   onClick={() => handleSend(input)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-[var(--color-primary)] text-[var(--color-secondary)] rounded-xl flex items-center justify-center hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-all shadow-lg active:scale-95"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary text-secondary rounded-xl flex items-center justify-center hover:bg-secondary hover:text-primary transition-all shadow-lg active:scale-95"
                 >
                   <Send className="w-6 h-6" />
                 </button>

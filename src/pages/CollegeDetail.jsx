@@ -59,7 +59,7 @@ const CollegeDetail = () => {
     return (
       <div className="pt-32 pb-20 text-center">
         <h2 className="text-3xl font-bold text-slate-800">College Not Found</h2>
-        <Link to="/" className="text-[var(--color-primary)] mt-4 inline-block font-bold underline">Return to Home</Link>
+        <Link to="/" className="text-primary mt-4 inline-block font-bold underline">Return to Home</Link>
       </div>
     );
   }
@@ -70,7 +70,7 @@ const CollegeDetail = () => {
       <div className="max-w-7xl mx-auto px-4 pt-10">
         <Link 
           to={-1} 
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-[var(--color-primary)] font-bold transition-colors group"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-bold transition-colors group"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           Back to Listing
@@ -85,16 +85,16 @@ const CollegeDetail = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              <div className="flex items-center gap-2 text-[var(--color-secondary)] font-bold text-sm mb-4 uppercase tracking-[0.2em]">
+              <div className="flex items-center gap-2 text-secondary font-bold text-sm mb-4 uppercase tracking-[0.2em]">
                 <Award className="w-5 h-5" />
                 Premier Institution
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[var(--color-primary)] mb-6 font-serif leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-6 font-serif leading-tight">
                 {college.name}
               </h1>
               <div className="flex flex-wrap items-center gap-4 mb-8">
                 <div className="flex items-center gap-3 text-slate-600 bg-slate-50 p-4 rounded-2xl w-fit">
-                  <MapPin className="w-5 h-5 text-[var(--color-primary)]" />
+                  <MapPin className="w-5 h-5 text-primary" />
                   <span className="font-bold text-lg">{college.location || "International Campus"}</span>
                 </div>
                 {college.website && (
@@ -102,9 +102,9 @@ const CollegeDetail = () => {
                     href={college.website} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center gap-2 text-[var(--color-primary)] bg-indigo-50 hover:bg-indigo-100 p-4 rounded-2xl transition-colors shrink-0 group border border-indigo-100"
+                    className="flex items-center gap-2 text-primary bg-indigo-50 hover:bg-indigo-100 p-4 rounded-2xl transition-colors shrink-0 group border border-indigo-100"
                   >
-                    <Globe className="w-5 h-5 group-hover:scale-110 transition-transform text-[var(--color-secondary)]" />
+                    <Globe className="w-5 h-5 group-hover:scale-110 transition-transform text-secondary" />
                     <span className="font-bold text-lg">Official Website</span>
                   </a>
                 )}
@@ -112,8 +112,8 @@ const CollegeDetail = () => {
               
               <div className="flex flex-wrap gap-4 mb-10">
                 {college.highlights?.slice(0, 3).map((highlight, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-indigo-50 text-[var(--color-primary)] px-4 py-2 rounded-xl text-sm font-bold border border-indigo-100">
-                    <CheckCircle2 className="w-4 h-4 text-[var(--color-secondary)]" />
+                  <div key={index} className="flex items-center gap-2 bg-indigo-50 text-primary px-4 py-2 rounded-xl text-sm font-bold border border-indigo-100">
+                    <CheckCircle2 className="w-4 h-4 text-secondary" />
                     {highlight}
                   </div>
                 ))}
@@ -123,7 +123,7 @@ const CollegeDetail = () => {
                 onClick={scrollToForm}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[var(--color-primary)] text-[var(--color-secondary)] border-2 border-[var(--color-secondary)] px-10 py-5 rounded-full font-black text-lg shadow-xl shadow-indigo-100 uppercase tracking-widest hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-all"
+                className="bg-primary text-secondary border-2 border-secondary px-10 py-5 rounded-full font-black text-lg shadow-xl shadow-indigo-100 uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all"
               >
                 Apply for Admission
               </motion.button>
@@ -141,8 +141,8 @@ const CollegeDetail = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[var(--color-secondary)]/10 rounded-full blur-2xl" />
-              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[var(--color-primary)]/10 rounded-full blur-3xl" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary/10 rounded-full blur-2xl" />
+              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
               
               {/* Floating Batch */}
               {college.images && college.images.length > 0 && (
@@ -180,9 +180,9 @@ const CollegeDetail = () => {
               >
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 bg-white rounded-2xl shadow-md flex items-center justify-center">
-                    <BookOpen className="w-6 h-6 text-[var(--color-secondary)]" />
+                    <BookOpen className="w-6 h-6 text-secondary" />
                   </div>
-                  <h2 className="text-3xl font-black text-[var(--color-primary)] font-serif underline decoration-[var(--color-secondary)] decoration-4 underline-offset-8">
+                  <h2 className="text-3xl font-black text-primary font-serif underline decoration-secondary decoration-4 underline-offset-8">
                     About Institution
                   </h2>
                 </div>
@@ -199,9 +199,9 @@ const CollegeDetail = () => {
               >
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 bg-white rounded-2xl shadow-md flex items-center justify-center">
-                    <Building2 className="w-6 h-6 text-[var(--color-secondary)]" />
+                    <Building2 className="w-6 h-6 text-secondary" />
                   </div>
-                  <h2 className="text-3xl font-black text-[var(--color-primary)] font-serif underline decoration-[var(--color-secondary)] decoration-4 underline-offset-8">
+                  <h2 className="text-3xl font-black text-primary font-serif underline decoration-secondary decoration-4 underline-offset-8">
                     World-Class Infrastructure
                   </h2>
                 </div>
@@ -234,9 +234,9 @@ const CollegeDetail = () => {
               >
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 bg-white rounded-2xl shadow-md flex items-center justify-center">
-                    <GraduationCap className="w-6 h-6 text-[var(--color-secondary)]" />
+                    <GraduationCap className="w-6 h-6 text-secondary" />
                   </div>
-                  <h2 className="text-3xl font-black text-[var(--color-primary)] font-serif underline decoration-[var(--color-secondary)] decoration-4 underline-offset-8">
+                  <h2 className="text-3xl font-black text-primary font-serif underline decoration-secondary decoration-4 underline-offset-8">
                     Popular Courses
                   </h2>
                 </div>
@@ -244,7 +244,7 @@ const CollegeDetail = () => {
                   {(college.courses || ["Engineering", "Medicine", "Arts", "Science", "Law", "Management"]).map((course, i) => (
                     <div 
                       key={i}
-                      className="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100 text-slate-700 font-bold hover:border-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-all cursor-default"
+                      className="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100 text-slate-700 font-bold hover:border-secondary hover:text-primary transition-all cursor-default"
                     >
                       {course}
                     </div>
@@ -266,13 +266,13 @@ const CollegeDetail = () => {
                   className="bg-white p-8 rounded-[2.5rem] shadow-2xl shadow-slate-200 border border-slate-100"
                 >
                   <h3 className="text-2xl font-black text-slate-800 mb-8 font-serif leading-tight">
-                    Key Institutional <span className="text-[var(--color-secondary)]">Highlights</span>
+                    Key Institutional <span className="text-secondary">Highlights</span>
                   </h3>
                   <div className="space-y-6">
                     {(college.highlights || ["Accredited by NAAC", "Top Placement Records", "Global Exchange Programs", "Advanced Research Labs"]).map((h, i) => (
                       <div key={i} className="flex gap-4">
                         <div className="shrink-0 w-6 h-6 bg-amber-50 rounded-full flex items-center justify-center mt-1">
-                          <CheckCircle2 className="w-4 h-4 text-[var(--color-secondary)]" />
+                          <CheckCircle2 className="w-4 h-4 text-secondary" />
                         </div>
                         <span className="text-slate-600 font-bold leading-tight">{h}</span>
                       </div>
@@ -282,7 +282,7 @@ const CollegeDetail = () => {
                   <div className="mt-10 pt-10 border-t border-slate-100">
                     <button 
                       onClick={scrollToForm}
-                      className="w-full bg-[var(--color-primary)] text-[var(--color-secondary)] py-5 rounded-3xl font-black text-lg shadow-xl shadow-indigo-100 hover:bg-[#0f172a] transition-all uppercase tracking-widest border border-[var(--color-secondary)]"
+                      className="w-full bg-primary text-secondary py-5 rounded-3xl font-black text-lg shadow-xl shadow-indigo-100 hover:bg-[#0f172a] transition-all uppercase tracking-widest border border-secondary"
                     >
                       Request Prospectus
                     </button>
@@ -290,13 +290,13 @@ const CollegeDetail = () => {
                 </motion.div>
 
                 {/* Info Note */}
-                <div className="bg-[var(--color-primary)] p-8 rounded-[2.5rem] text-white relative overflow-hidden border border-indigo-900 shadow-2xl shadow-indigo-200">
+                <div className="bg-primary p-8 rounded-[2.5rem] text-white relative overflow-hidden border border-indigo-900 shadow-2xl shadow-indigo-200">
                   <div className="relative z-10">
                     <h4 className="text-xl font-bold mb-4">Direct Admission Support</h4>
                     <p className="text-white/80 font-medium mb-6">
                       Get guaranteed guidance for the entire admission process from document collection to scholarship assistance.
                     </p>
-                    <Link to="/contact" className="font-black underline decoration-[var(--color-secondary)] decoration-4 underline-offset-8">
+                    <Link to="/contact" className="font-black underline decoration-secondary decoration-4 underline-offset-8">
                       Chat with Counselor
                     </Link>
                   </div>

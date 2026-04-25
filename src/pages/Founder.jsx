@@ -6,8 +6,8 @@ const Founder = () => {
   return (
     <div className="pt-24 min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-[var(--color-primary)] py-32 text-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/10 rounded-full blur-[120px]" />
+      <div className="bg-primary py-32 text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px]" />
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4">
@@ -26,7 +26,7 @@ const Founder = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-full mb-10"
           >
-            <Award className="w-6 h-6 text-[var(--color-secondary)]" />
+            <Award className="w-6 h-6 text-secondary" />
             <span className="text-white text-sm font-black tracking-[0.2em] uppercase">The Visionary Leader</span>
           </motion.div>
           
@@ -35,7 +35,7 @@ const Founder = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-8xl font-black text-white mb-8 font-serif leading-tight uppercase tracking-tighter"
           >
-            MESSAGE FROM <br /><span className="text-[var(--color-secondary)]">THE FOUNDER</span>
+            MESSAGE FROM <br /><span className="text-secondary">THE FOUNDER</span>
           </motion.h1>
           
           <motion.p 
@@ -60,9 +60,9 @@ const Founder = () => {
               viewport={{ once: true }}
               className="bg-white p-12 md:p-20 rounded-[4rem] shadow-2xl shadow-slate-200 border border-slate-100 relative"
             >
-              <Quote className="absolute top-12 left-12 w-20 h-20 text-[var(--color-primary)] opacity-5" />
+              <Quote className="absolute top-12 left-12 w-20 h-20 text-primary opacity-5" />
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-5xl font-black text-[var(--color-primary)] mb-10 font-serif leading-tight">Bridging <span className="text-[var(--color-secondary)]">Dreams</span> & <span className="text-[var(--color-secondary)]">Reality</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-primary mb-10 font-serif leading-tight">Bridging <span className="text-secondary">Dreams</span> & <span className="text-secondary">Reality</span></h2>
                 <div className="space-y-6 text-slate-600 font-medium text-lg leading-loose">
                   <p>
                     With over a decade of experience in international education consultancy, I have witnessed first-hand the challenges students face when pursuing professional degrees abroad. My mission was born from a simple realization: every student deserves transparent, ethical, and high-quality guidance to navigate the global academic landscape.
@@ -97,8 +97,8 @@ const Founder = () => {
                   viewport={{ once: true }}
                   className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all"
                 >
-                  <item.icon className="w-12 h-12 text-[var(--color-secondary)] mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-2xl font-black text-[var(--color-primary)] mb-4 uppercase tracking-tighter font-serif">{item.title}</h3>
+                  <item.icon className="w-12 h-12 text-secondary mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-2xl font-black text-primary mb-4 uppercase tracking-tighter font-serif">{item.title}</h3>
                   <p className="text-slate-600 font-bold leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -111,10 +111,10 @@ const Founder = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-[var(--color-primary)] p-12 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-100 relative overflow-hidden"
+              className="bg-primary p-12 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-100 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
-              <h3 className="text-2xl font-black mb-10 uppercase tracking-widest border-b border-white/20 pb-6 text-[var(--color-secondary)]">Track Record</h3>
+              <h3 className="text-2xl font-black mb-10 uppercase tracking-widest border-b border-white/20 pb-6 text-secondary">Track Record</h3>
               <div className="space-y-8">
                 {[
                   { label: "Students Guided", value: "2500+" },
@@ -137,11 +137,11 @@ const Founder = () => {
               transition={{ delay: 0.1 }}
               className="bg-white p-10 rounded-[3.5rem] border border-slate-100 shadow-lg"
             >
-              <h3 className="text-xl font-black text-[var(--color-primary)] mb-8 uppercase tracking-widest border-b border-slate-100 pb-4">Core Values</h3>
+              <h3 className="text-xl font-black text-primary mb-8 uppercase tracking-widest border-b border-slate-100 pb-4">Core Values</h3>
               <div className="space-y-4">
                 {["Transparency", "Personalized Mentoriship", "Post-Admission Support", "Global Network"].map((v, i) => (
                   <div key={i} className="flex gap-4 items-center">
-                    <CheckCircle className="w-5 h-5 text-[var(--color-secondary)]" />
+                    <CheckCircle className="w-5 h-5 text-secondary" />
                     <span className="text-slate-700 font-bold">{v}</span>
                   </div>
                 ))}

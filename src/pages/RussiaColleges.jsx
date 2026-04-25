@@ -15,8 +15,8 @@ const RussiaColleges = () => {
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
       {/* Header */}
-      <div className="bg-[var(--color-primary)] py-24 text-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--color-secondary)]/10 rounded-full blur-[100px]" />
+      <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px]" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-[80px]" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4">
@@ -34,7 +34,7 @@ const RussiaColleges = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full mb-8"
           >
-            <Globe className="w-5 h-5 text-[var(--color-secondary)]" />
+            <Globe className="w-5 h-5 text-secondary" />
             <span className="text-white text-sm font-bold tracking-widest uppercase">Global Excellence • Russia</span>
           </motion.div>
           
@@ -43,7 +43,7 @@ const RussiaColleges = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-7xl font-extrabold text-white mb-8 font-serif leading-tight"
           >
-            Top Universities in <span className="text-[var(--color-secondary)]">Russia</span>
+            Top Universities in <span className="text-secondary">Russia</span>
           </motion.h1>
           
           <motion.p 
@@ -67,8 +67,8 @@ const RussiaColleges = () => {
           className="mb-32 grid grid-cols-1 lg:grid-cols-3 gap-12"
         >
           <div className="lg:col-span-1">
-            <h2 className="text-[var(--color-secondary)] font-bold tracking-widest text-sm uppercase mb-4">The Ideal Destination</h2>
-            <h3 className="text-4xl font-black text-[var(--color-primary)] font-serif mb-6 leading-tight">Why Study MBBS in Russia?</h3>
+            <h2 className="text-secondary font-bold tracking-widest text-sm uppercase mb-4">The Ideal Destination</h2>
+            <h3 className="text-4xl font-black text-primary font-serif mb-6 leading-tight">Why Study MBBS in Russia?</h3>
             <p className="text-slate-600 font-medium leading-relaxed">
               Russia has consistently remained the top choice for Indian medical students for over three decades, offering a perfect blend of high-quality education and global career opportunities.
             </p>
@@ -80,10 +80,10 @@ const RussiaColleges = () => {
               { title: "No Entrance Exams", desc: "Direct admission based on 12th marks and NEET qualification. No additional entrance hurdles." },
               { title: "Clinical Training", desc: "Exceptional hands-on clinical exposure in major state-owned government hospitals." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white p-7 rounded-3xl shadow-sm border border-slate-100 flex gap-5 group hover:border-[var(--color-secondary)]/30 transition-all">
-                <CheckCircle className="w-6 h-6 text-[var(--color-secondary)] shrink-0" />
+              <div key={idx} className="bg-white p-7 rounded-3xl shadow-sm border border-slate-100 flex gap-5 group hover:border-secondary/30 transition-all">
+                <CheckCircle className="w-6 h-6 text-secondary shrink-0" />
                 <div>
-                  <h4 className="text-[var(--color-primary)] font-bold mb-1 uppercase tracking-tighter text-sm">{item.title}</h4>
+                  <h4 className="text-primary font-bold mb-1 uppercase tracking-tighter text-sm">{item.title}</h4>
                   <p className="text-slate-500 text-xs font-semibold leading-relaxed">{item.desc}</p>
                 </div>
               </div>
@@ -95,11 +95,11 @@ const RussiaColleges = () => {
         <div className="mb-32">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-[var(--color-secondary)]/10 rounded-2xl flex items-center justify-center">
-                <Stethoscope className="w-10 h-10 text-[var(--color-secondary)]" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center">
+                <Stethoscope className="w-10 h-10 text-secondary" />
               </div>
               <div>
-                <h2 className="text-4xl md:text-5xl font-black text-[var(--color-primary)] font-serif uppercase tracking-tight">Medical Universities</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-primary font-serif uppercase tracking-tight">Medical Universities</h2>
                 <p className="text-slate-500 font-bold tracking-widest text-sm uppercase mt-1">NMC Listed | High FMGE Passing Rate</p>
               </div>
             </div>
@@ -118,7 +118,7 @@ const RussiaColleges = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="bg-white rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-[var(--color-secondary)]/20 transition-all group overflow-hidden"
+                  className="bg-white rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-secondary/20 transition-all group overflow-hidden"
                 >
                   <div className="relative h-72 overflow-hidden">
                     <img 
@@ -129,7 +129,7 @@ const RussiaColleges = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
                     <div className="absolute bottom-6 left-8 right-8">
                       <div className="flex items-center gap-2 text-white/80 text-xs font-black uppercase tracking-[0.2em] mb-2">
-                        <MapPin className="w-3.5 h-3.5 text-[var(--color-secondary)]" />
+                        <MapPin className="w-3.5 h-3.5 text-secondary" />
                         {univ.location}
                       </div>
                       <h3 className="text-2xl md:text-3xl font-black text-white font-serif leading-tight">
@@ -142,18 +142,18 @@ const RussiaColleges = () => {
                     <div className="grid grid-cols-2 gap-4 mb-8">
                       <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
                         <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Duration</p>
-                        <p className="text-sm font-black text-[var(--color-primary)]">6 Years</p>
+                        <p className="text-sm font-black text-primary">6 Years</p>
                       </div>
                       <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
                         <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Medium</p>
-                        <p className="text-sm font-black text-[var(--color-primary)]">English</p>
+                        <p className="text-sm font-black text-primary">English</p>
                       </div>
                     </div>
 
                     <div className="space-y-4 mb-10">
                       {univ.highlights?.slice(0, 3).map((h, idx) => (
                         <div key={idx} className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-[var(--color-secondary)] shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
                           <span className="text-sm font-bold text-slate-600 leading-tight">{h}</span>
                         </div>
                       ))}
@@ -161,7 +161,7 @@ const RussiaColleges = () => {
 
                     <Link 
                       to={id ? `/college/${id}` : '#'} 
-                      className="w-full bg-[var(--color-primary)] text-[var(--color-secondary)] py-5 rounded-2xl font-black text-center block border-2 border-[var(--color-secondary)] hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-all shadow-xl hover:shadow-indigo-200 uppercase tracking-widest text-xs"
+                      className="w-full bg-primary text-secondary py-5 rounded-2xl font-black text-center block border-2 border-secondary hover:bg-secondary hover:text-primary transition-all shadow-xl hover:shadow-indigo-200 uppercase tracking-widest text-xs"
                     >
                       View Campus & Details →
                     </Link>
@@ -175,11 +175,11 @@ const RussiaColleges = () => {
         {/* Engineering Section */}
         <div className="mb-32">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-16 h-16 bg-[var(--color-primary)]/10 rounded-2xl flex items-center justify-center">
-              <Cpu className="w-10 h-10 text-[var(--color-primary)]" />
+            <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+              <Cpu className="w-10 h-10 text-primary" />
             </div>
             <div>
-              <h2 className="text-3xl md:text-5xl font-black text-[var(--color-primary)] font-serif uppercase tracking-tight">Engineering Universities</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-primary font-serif uppercase tracking-tight">Engineering Universities</h2>
               <p className="text-slate-500 font-bold tracking-widest text-sm uppercase mt-1">Technological Excellence | Global Recognition</p>
             </div>
           </div>
@@ -192,25 +192,25 @@ const RussiaColleges = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-[#15803d]/20 transition-all group flex gap-6 items-start"
+                className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all group flex gap-6 items-start"
               >
                 {typeof univ === 'object' && univ.images && univ.images[0] ? (
                   <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-slate-100 shadow-sm relative group-hover:shadow-md transition-shadow">
                     <img src={univ.images[0]} alt={univ.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 bg-slate-50 text-[var(--color-secondary)] rounded-2xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors shrink-0">
+                  <div className="w-16 h-16 bg-slate-50 text-secondary rounded-2xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
                     {i + 1}
                   </div>
                 )}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-extrabold text-slate-800 mb-4 font-serif leading-tight group-hover:text-[var(--color-secondary)] transition-colors">{typeof univ === 'object' ? univ.name : univ}</h3>
+                  <h3 className="text-xl md:text-2xl font-extrabold text-slate-800 mb-4 font-serif leading-tight group-hover:text-secondary transition-colors">{typeof univ === 'object' ? univ.name : univ}</h3>
                   <div className="flex flex-wrap gap-4">
                     <span className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                      <CheckCircle className="w-4 h-4 text-[var(--color-secondary)]" /> Industrial Connect
+                      <CheckCircle className="w-4 h-4 text-secondary" /> Industrial Connect
                     </span>
                     <span className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                      <CheckCircle className="w-4 h-4 text-[var(--color-secondary)]" /> Research Driven
+                      <CheckCircle className="w-4 h-4 text-secondary" /> Research Driven
                     </span>
                   </div>
                 </div>
@@ -224,17 +224,17 @@ const RussiaColleges = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-32 p-12 md:p-20 bg-gradient-to-br from-[var(--color-primary)] to-[#0f172a] rounded-[4rem] text-center text-white relative overflow-hidden shadow-2xl"
+          className="mt-32 p-12 md:p-20 bg-gradient-to-br from-primary to-[#0f172a] rounded-[4rem] text-center text-white relative overflow-hidden shadow-2xl"
         >
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
           <div className="relative z-10">
-            <Award className="w-20 h-20 text-[var(--color-secondary)] mx-auto mb-8 animate-bounce" />
+            <Award className="w-20 h-20 text-secondary mx-auto mb-8 animate-bounce" />
             <h2 className="text-3xl md:text-6xl font-black mb-8 font-serif leading-tight">Start Your Global Career Today</h2>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 font-medium">
               Join 5000+ Indian students who have realized their dreams in Russia. Get complete support from documents to departure.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-[var(--color-secondary)] hover:bg-[#ca8a04] text-[var(--color-primary)] px-12 py-5 rounded-full font-black text-xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">
+              <button className="bg-secondary hover:bg-[#ca8a04] text-primary px-12 py-5 rounded-full font-black text-xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">
                 Get Free Counseling
               </button>
               <button className="bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-white px-12 py-5 rounded-full font-black text-xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">

@@ -28,8 +28,8 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-[#FF5733] font-bold tracking-widest text-sm uppercase mb-2">Student Stories</h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold text-[#15803d] mb-4">What Our Students Say</h3>
+          <h2 className="text-secondary font-bold tracking-widest text-sm uppercase mb-2">Student Stories</h2>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">What Our Students Say</h3>
           <p className="text-slate-600 text-lg font-medium">
             Hear from students and parents who have successfully transformed their career aspirations into reality with our expert guidance.
           </p>
@@ -77,7 +77,7 @@ const Testimonials = () => {
               viewport={{ once: true }}
               className="bg-slate-50 p-8 rounded-2xl relative border border-slate-100 hover:shadow-lg transition-all"
             >
-              <Quote className="absolute top-6 right-6 w-10 h-10 text-[#FF5733]/10" />
+              <Quote className="absolute top-6 right-6 w-10 h-10 text-secondary/10" />
               <div className="flex text-[#FFC107] mb-6">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
@@ -91,10 +91,10 @@ const Testimonials = () => {
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name} 
-                  className="w-12 h-12 rounded-full object-cover border-2 border-[#FF5733]"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-secondary"
                 />
                 <div>
-                  <h4 className="font-bold text-[#15803d] text-sm">{testimonial.name}</h4>
+                  <h4 className="font-bold text-primary text-sm">{testimonial.name}</h4>
                   <p className="text-xs text-slate-500 font-bold">{testimonial.course}</p>
                 </div>
               </div>

@@ -508,6 +508,26 @@ export const countriesData = [
     highlights: ["NMC & WHO Approved", "World-class infrastructure", "Affordable Fee Structure", "English Medium Curriculum"],
     medicalUniversities: [
       { 
+        id: "sechenov-moscow", 
+        name: "I.M Sechenov First Moscow State Medical University", 
+        location: "Moscow, Russia", 
+        images: ["/images/colleges/foreign/russia/sechenov.jpg"],
+        about: "I.M. Sechenov First Moscow State Medical University is the oldest and most prestigious medical university in Russia. It is the premier choice for international students seeking elite medical education.",
+        infrastructure: "The university features a massive clinical center with over 3,000 beds, advanced simulation facilities, a world-class robotic surgery center, and extensive comfortable hostel accommodations.",
+        courses: ["General Medicine (MBBS)", "Dentistry", "Pharmacy", "Pediatrics"],
+        highlights: ["Oldest Medical University in Russia", "Elite Global Status", "Massive Clinical Infrastructure", "NMC/WHO Approved"]
+      },
+      { 
+        id: "kazan-state", 
+        name: "Kazan State Medical University", 
+        location: "Kazan, Russia", 
+        images: ["/images/colleges/foreign/russia/kazan_state.jpg"],
+        about: "Kazan State Medical University is a multi-functional and multi-leveled state institution of higher learning in medicine. It functions under the governance of the Ministry of Health of the Russian Federation.",
+        infrastructure: "KSMU has excellent infrastructure including multiple well-equipped affiliated hospitals, specialized research institutes, modern anatomy museums, and highly secure student campuses.",
+        courses: ["General Medicine (MBBS)", "Stomatology", "Pediatrics", "Pharmacy"],
+        highlights: ["High FMGE Success Rate", "Rich Medical History", "Excellent Clinical Base", "NMC/WHO Approved"]
+      },
+      { 
         id: "kant-baltic", 
         name: "Immanuel Kant Baltic Federal University", 
         location: "Kaliningrad, Russia", 
@@ -569,6 +589,16 @@ export const countriesData = [
       }
     ],
     engineeringUniversities: [
+      { 
+        id: "mipt-moscow", 
+        name: "Moscow Institute of Physics and Technology (MIPT)", 
+        location: "Moscow, Russia", 
+        images: ["/images/colleges/foreign/russia/mipt.jpg"],
+        about: "Known informally as the 'Russian MIT', MIPT is a premier public research university dedicated to preparing specialists in theoretical and applied physics, applied mathematics, and related disciplines.",
+        infrastructure: "MIPT boasts world-leading research centers, cutting-edge quantum technology labs, supercomputing facilities, and deep integrations with the Russian Academy of Sciences.",
+        courses: ["Applied Mathematics and Physics", "Computer Science", "Biomedical Engineering"],
+        highlights: ["The 'Russian MIT'", "Elite Tech Faculty", "World-Leading Research", "Global Tech Partnerships"]
+      },
       { 
         id: "mai-moscow", 
         name: "Moscow State Aviation Institute (MAI)", 

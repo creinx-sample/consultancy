@@ -35,9 +35,9 @@ const Contact = () => {
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <div className="bg-[var(--color-primary)] py-24 text-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-secondary)]/10 rounded-full blur-[80px]" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#059669]/10 rounded-full blur-[60px]" />
+      <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[60px]" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <div className="max-w-7xl mx-auto px-4 mb-8 text-left">
@@ -54,7 +54,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-7xl font-black text-white mb-6 font-serif leading-tight"
           >
-            GET IN <span className="text-[var(--color-secondary)]">TOUCH</span>
+            GET IN <span className="text-secondary">TOUCH</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -73,9 +73,29 @@ const Contact = () => {
           {/* Quick Contact Cards */}
           <div className="lg:col-span-1 space-y-6">
             {[
-              { icon: MapPin, title: "Our Office", detail: "2nd Floor, Fairlands, Salem, TN 636016", color: "bg-indigo-50", iconColor: "text-[var(--color-primary)]" },
-              { icon: Phone, title: "Call Us", detail: "+91 95973 71949", color: "bg-amber-50", iconColor: "text-[var(--color-secondary)]" },
-              { icon: Mail, title: "Email Us", detail: "info@tnaec.in", color: "bg-emerald-50", iconColor: "text-[#059669]" }
+              { 
+                icon: MapPin, 
+                title: "Headquarters", 
+                detail: "4B, Ramakrishna Puram Main Road, Karur", 
+                subDetail: "Opposite Stationary Shop",
+                color: "bg-indigo-50", 
+                iconColor: "text-primary" 
+              },
+              { 
+                icon: Phone, 
+                title: "Call Us", 
+                detail: "+91 95973 71949", 
+                subDetail: "+91 95247 12976",
+                color: "bg-amber-50", 
+                iconColor: "text-secondary" 
+              },
+              { 
+                icon: Mail, 
+                title: "Email Us", 
+                detail: "uniquetours.packager@gmail.com", 
+                color: "bg-emerald-50", 
+                iconColor: "text-secondary" 
+              }
             ].map((item, i) => (
               <motion.div 
                 key={i}
@@ -90,15 +110,20 @@ const Contact = () => {
                 <div>
                   <h4 className="text-xl font-black text-slate-800 mb-2 font-serif">{item.title}</h4>
                   <p className="text-slate-600 font-bold leading-tight">{item.detail}</p>
+                  {item.subDetail && <p className="text-slate-400 text-xs font-bold mt-1 uppercase tracking-wider">{item.subDetail}</p>}
                 </div>
               </motion.div>
             ))}
             
             <div className="bg-white p-8 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100">
-              <h4 className="text-xl font-black text-slate-800 mb-6 font-serif">Working Hours</h4>
-              <div className="flex items-center gap-4 text-slate-600 font-bold">
-                <Clock className="w-5 h-5 text-[var(--color-secondary)]" />
-                <span>Mon - Sat: 10AM - 7PM</span>
+              <h4 className="text-xl font-black text-slate-800 mb-6 font-serif tracking-tight">Our Branches</h4>
+              <div className="grid grid-cols-2 gap-4">
+                {['Karur', 'Trichy', 'Namakkal', 'Coimbatore'].map((branch) => (
+                  <div key={branch} className="flex items-center gap-2 text-slate-600 font-bold">
+                    <div className="w-2 h-2 rounded-full bg-secondary" />
+                    <span className="text-sm uppercase tracking-wide">{branch}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -119,7 +144,7 @@ const Contact = () => {
                     exit={{ opacity: 0 }}
                   >
                     <div className="mb-12 text-center md:text-left">
-                      <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 font-serif leading-tight">Send a <span className="text-[var(--color-primary)]">Message</span></h2>
+                      <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 font-serif leading-tight">Send a <span className="text-primary">Message</span></h2>
                       <p className="text-slate-500 font-bold text-lg">Leave us a message and we'll get back to you within 24 hours.</p>
                     </div>
 
@@ -133,7 +158,7 @@ const Contact = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/10 transition-all font-bold"
+                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-bold"
                             placeholder="John Doe"
                           />
                         </div>
@@ -145,7 +170,7 @@ const Contact = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/10 transition-all font-bold"
+                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-bold"
                             placeholder="john@example.com"
                           />
                         </div>
@@ -159,7 +184,7 @@ const Contact = () => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/10 transition-all font-bold"
+                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-bold"
                             placeholder="+91 XXXXX XXXXX"
                           />
                         </div>
@@ -169,7 +194,7 @@ const Contact = () => {
                             name="subject"
                             value={formData.subject}
                             onChange={handleChange}
-                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/10 transition-all font-bold"
+                            className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-bold"
                           >
                             <option value="">Select a program</option>
                             <option value="TN Engineering">TN Engineering</option>
@@ -189,7 +214,7 @@ const Contact = () => {
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/10 transition-all font-bold resize-none"
+                          className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-bold resize-none"
                           placeholder="Tell us about your academic goals..."
                         />
                       </div>
@@ -197,7 +222,7 @@ const Contact = () => {
                       <button 
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-[var(--color-primary)] text-white py-6 rounded-[2rem] font-bold text-lg hover:bg-[#0f172a] transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-3 group disabled:opacity-70"
+                        className="w-full bg-primary text-white py-6 rounded-[2rem] font-bold text-lg hover:bg-secondary transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-3 group disabled:opacity-70"
                       >
                         {isSubmitting ? (
                           <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
@@ -226,7 +251,7 @@ const Contact = () => {
                     </p>
                     <button 
                       onClick={() => setIsSubmitted(false)}
-                      className="text-[var(--color-primary)] font-black underline decoration-4 decoration-[var(--color-secondary)] underline-offset-8 uppercase tracking-widest text-sm"
+                      className="text-primary font-black underline decoration-4 decoration-secondary underline-offset-8 uppercase tracking-widest text-sm"
                     >
                       Send another message
                     </button>
@@ -243,13 +268,13 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 pb-20">
         <div className="w-full h-[500px] bg-white p-4 rounded-[3rem] shadow-2xl border border-white relative overflow-hidden">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31263.15545524675!2d78.14!3d11.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf0380d603aeb%3A0xf69c73792c3065b7!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v16200000" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15668.618625624177!2d78.0772221!3d10.9638889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa2f038f116675%3A0x63045b34c2668579!2sKarur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1714050000000!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
             allowFullScreen="" 
             loading="lazy"
-            title="Salem Office Location"
+            title="Karur Office Location"
             className="rounded-[2.5rem]"
           ></iframe>
         </div>

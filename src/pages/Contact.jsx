@@ -264,21 +264,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Map Section */}
-      <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="w-full h-[500px] bg-white p-4 rounded-[3rem] shadow-2xl border border-white relative overflow-hidden">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15668.618625624177!2d78.0772221!3d10.9638889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa2f038f116675%3A0x63045b34c2668579!2sKarur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1714050000000!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy"
-            title="Karur Office Location"
-            className="rounded-[2.5rem]"
-          ></iframe>
-        </div>
-      </div>
+
     </div>
   );
 };

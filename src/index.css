@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* OPTION 1: Modern Crimson (Bold & Authoritative) */
+  --color-primary: #be123c;
+  /* Crimson / Deep Rose */
+  --color-primary-dark: #881337;
+  /* Dark Crimson */
+  --color-secondary: #1f2937;
+  /* Deep Slate Gray */
+  --color-secondary-dark: #111827;
+  --color-accent: #fff1f2;
+  /* Rose 50 for subtle backgrounds */
+
+  /* OPTION 2: Graphite & Gold (Premium Consultancy) */
+  /* --color-primary: #18181b; */
+  /* Zinc 900 */
+  /* --color-primary-dark: #09090b; */
+  /* --color-secondary: #d97706; */
+  /* Muted Gold */
+  /* --color-secondary-dark: #b45309; */
+  /* --color-accent: #fafafa; */
+
+  /* OPTION 3: Terracotta Modern (Warmth & Authority) */
+  /* --color-primary: #431407; */
+  /* Deep Rust/Brown */
+  /* --color-primary-dark: #2c0b04; */
+  /* --color-secondary: #ea580c; */
+  /* Terracotta */
+  /* --color-secondary-dark: #c2410c; */
+  /* --color-accent: #fff7ed; */
+
+  /* OPTION 4: Imperial Plum (Sophisticated Academic) */
+  /* --color-primary: #4a044e; */
+  /* Deep Plum */
+  /* --color-primary-dark: #2e0231; */
+  /* --color-secondary: #c026d3; */
+  /* Vibrant Fuchsia/Plum */
+  /* --color-secondary-dark: #a21caf; */
+  /* --color-accent: #fdf4ff; */
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}

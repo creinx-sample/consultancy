@@ -8,16 +8,27 @@ import LeadForm from '../components/home/LeadForm';
 
 const Home = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Use a small timeout to ensure everything is rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'auto' });
+        }, 0);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
     <div className="w-full overflow-hidden">
       <Hero />
       <ServicesSection />
-      <Reviews />
       <GlobalPartners />
       <WhyChooseUs />
+      <Reviews />
       <LeadForm />
     </div>
   );

@@ -60,12 +60,13 @@ const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex h-full"
               >
                 <Link 
                   to={service.path}
-                  className="block bg-white rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.04)] border border-slate-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-300 group text-center h-full relative"
+                  className="block bg-white rounded-3xl p-8 shadow-[0_15px_40px_rgba(0,0,0,0.06)] border-2 border-primary hover:border-secondary transition-all duration-300 group text-center h-full relative"
                 >
-                  <div className={`w-16 h-16 rounded-full ${service.bg} flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform`}>
+                  <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform`}>
                     <Icon className={`w-8 h-8 ${service.color}`} />
                   </div>
                   <h4 className="text-2xl font-bold text-primary mb-4">{service.title}</h4>

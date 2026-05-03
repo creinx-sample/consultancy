@@ -15,17 +15,17 @@ const Services = () => {
       
       {/* Header */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="absolute top-10 left-10 z-20">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white font-black transition-all group py-2 px-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-[10px] uppercase tracking-[0.2em]">Back</span>
+          </Link>
+        </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <div className="absolute top-0 left-0 -ml-10">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              Back
-            </Link>
-          </div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

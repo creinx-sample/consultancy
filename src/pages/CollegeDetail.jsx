@@ -44,12 +44,16 @@ const CollegeDetail = () => {
   if (!college) {
     countriesData.forEach(country => {
       // Check medical universities
-      const foundMed = country.medicalUniversities?.find(u => typeof u === 'object' && u.id === collegeId);
+      const foundMed = country.medicalUniversities?.find(u => 
+        typeof u === 'object' && (u.id === collegeId || u.name === decodeURIComponent(collegeId))
+      );
       if (foundMed) college = foundMed;
       
-      // Check engineering universities (Fix for MAI)
+      // Check engineering universities
       if (!college && country.engineeringUniversities) {
-        const foundEng = country.engineeringUniversities.find(u => u.id === collegeId);
+        const foundEng = country.engineeringUniversities.find(u => 
+          typeof u === 'object' && (u.id === collegeId || u.name === decodeURIComponent(collegeId))
+        );
         if (foundEng) college = foundEng;
       }
     });
@@ -117,6 +121,10 @@ const CollegeDetail = () => {
                     {highlight}
                   </div>
                 ))}
+              </div>
+
+              <div className="mb-10 pl-6 border-l-4 border-secondary italic text-slate-500 font-medium text-lg">
+                "Flexible fee options, tailored to your academic journey."
               </div>
 
               <motion.button 

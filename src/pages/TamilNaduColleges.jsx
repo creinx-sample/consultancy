@@ -21,7 +21,10 @@ const TamilNaduColleges = () => {
     Stethoscope: Stethoscope,
     Leaf: Leaf,
     Scale: Scale,
-    Award: Award
+    Award: Award,
+    Activity: Stethoscope, // Using Stethoscope for medical consistency
+    Crosshair: GraduationCap, // Or another relevant icon
+    Briefcase: Scale // Using Scale for Law
   };
 
 const containerVariants = {
@@ -45,19 +48,19 @@ const itemVariants = {
       className="pt-24 min-h-screen bg-slate-50"
     >
       {/* Header */}
-      <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="absolute top-10 left-10 z-20">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white font-black transition-all group py-2 px-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-[10px] uppercase tracking-[0.2em]">Back</span>
+          </Link>
+        </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <div className="absolute top-0 left-0 -ml-10">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              Back
-            </Link>
-          </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -85,13 +88,35 @@ const itemVariants = {
       </div>
 
       {/* Filter Bar */}
-      <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-lg border-b border-slate-200 py-6 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="z-40 bg-white border-b-2 border-primary py-4 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative group">
+          {/* Manual Scroll Buttons */}
+          <button 
+            onClick={() => {
+              const container = document.getElementById('filter-container');
+              container.scrollBy({ left: -200, behavior: 'smooth' });
+            }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-50 bg-white/90 border-2 border-primary p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
+          >
+            <ArrowLeft className="w-4 h-4 text-primary" />
+          </button>
+          
+          <button 
+            onClick={() => {
+              const container = document.getElementById('filter-container');
+              container.scrollBy({ left: 200, behavior: 'smooth' });
+            }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-50 bg-white/90 border-2 border-primary p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
+          >
+            <ArrowLeft className="w-4 h-4 text-primary rotate-180" />
+          </button>
+
           <motion.div 
+            id="filter-container"
             variants={containerVariants}
             initial="hidden"
             animate="show"
-            className="flex flex-wrap gap-4 justify-center"
+            className="flex flex-nowrap overflow-x-auto gap-6 px-12 py-6 no-scrollbar scroll-smooth"
           >
             {tnUniversitiesData.map((cat) => {
               const Icon = iconMap[cat.icon] || Globe;
@@ -102,10 +127,10 @@ const itemVariants = {
                   whileTap={{ scale: 0.95 }}
                   key={cat.category}
                   onClick={() => setActiveCategory(cat.category)}
-                  className={`flex items-center gap-3 px-8 py-3 rounded-2xl text-xs font-black transition-all uppercase tracking-widest ${
+                  className={`flex-shrink-0 flex items-center gap-3 px-8 py-4 rounded-2xl text-[11px] font-black transition-all uppercase tracking-widest border-2 ${
                     activeCategory === cat.category
-                      ? 'bg-primary text-secondary shadow-2xl shadow-indigo-200 border-2 border-secondary'
-                      : 'bg-white text-slate-500 border border-slate-100 hover:border-secondary/30 hover:text-primary'
+                      ? 'bg-primary text-white shadow-2xl shadow-indigo-200 border-secondary'
+                      : 'bg-white text-slate-900 border-secondary/40 hover:border-secondary hover:text-primary'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -218,9 +243,6 @@ const itemVariants = {
             <Link to="/contact" className="bg-secondary hover:bg-white text-primary px-12 py-6 rounded-2xl font-black text-xl shadow-2xl transition-all uppercase tracking-[0.2em] active:scale-95">
               Consult Now
             </Link>
-            <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-12 py-6 rounded-2xl font-black text-xl transition-all uppercase tracking-[0.2em]">
-              Guidelines
-            </button>
           </div>
         </motion.div>
       </div>

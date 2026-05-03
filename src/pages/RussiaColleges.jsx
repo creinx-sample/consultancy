@@ -16,41 +16,39 @@ const RussiaColleges = () => {
     <div className="pt-24 min-h-screen bg-slate-50">
       {/* Header */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="absolute top-10 left-10 z-20">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white font-black transition-all group py-2 px-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-[10px] uppercase tracking-[0.2em]">Back</span>
+          </Link>
+        </div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px]" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-[80px]" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="absolute top-0 left-0 -ml-10">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              Back
-            </Link>
-          </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full mb-8"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-full mb-10"
           >
-            <Globe className="w-5 h-5 text-secondary" />
-            <span className="text-white text-sm font-bold tracking-widest uppercase">Global Excellence • Russia</span>
+            <Globe className="w-6 h-6 text-secondary" />
+            <span className="text-white text-sm font-black tracking-[0.2em] uppercase">Global Excellence • Russia</span>
           </motion.div>
-          
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-7xl font-extrabold text-white mb-8 font-serif leading-tight"
+            className="text-4xl md:text-7xl font-black text-white mb-8 font-serif leading-tight uppercase tracking-tighter"
           >
             Top Universities in <span className="text-secondary">Russia</span>
           </motion.h1>
-          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white/90 text-lg md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed"
+            className="text-white/80 text-xl md:text-2xl max-w-3xl mx-auto font-medium"
           >
             Secure your future in Russia's most prestigious government universities recognized by NMC, WHO, and global accreditation bodies.
           </motion.p>
@@ -184,65 +182,61 @@ const RussiaColleges = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-            {russiaData.engineeringUniversities.map((univ, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all group flex gap-6 items-start"
-              >
-                {typeof univ === 'object' && univ.images && univ.images[0] ? (
-                  <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-slate-100 shadow-sm relative group-hover:shadow-md transition-shadow">
-                    <img src={univ.images[0]} alt={univ.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
+            {russiaData.engineeringUniversities.map((univ, i) => {
+              const name = typeof univ === 'object' ? univ.name : univ;
+              const id = typeof univ === 'object' ? univ.id : null;
+
+              return (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-white rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all group overflow-hidden"
+                >
+                  <div className="relative h-72 overflow-hidden">
+                    <img 
+                      src={univ.images?.[0] || 'https://images.unsplash.com/photo-1562774053-701939374585?q=80'} 
+                      alt={name} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
+                    <div className="absolute bottom-6 left-8 right-8">
+                      <div className="flex items-center gap-2 text-white/80 text-xs font-black uppercase tracking-[0.2em] mb-2">
+                        <MapPin className="w-3.5 h-3.5 text-secondary" />
+                        {univ.location}
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-black text-white font-serif leading-tight">
+                        {name}
+                      </h3>
+                    </div>
                   </div>
-                ) : (
-                  <div className="w-16 h-16 bg-slate-50 text-secondary rounded-2xl flex items-center justify-center font-black text-xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                    {i + 1}
+                  
+                  <div className="p-10">
+                    <div className="flex flex-wrap gap-4 mb-8">
+                      <span className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-4 py-2 rounded-xl border border-slate-100">
+                        <CheckCircle className="w-4 h-4 text-secondary" /> Industrial Connect
+                      </span>
+                      <span className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-4 py-2 rounded-xl border border-slate-100">
+                        <CheckCircle className="w-4 h-4 text-secondary" /> Research Driven
+                      </span>
+                    </div>
+
+                    <Link 
+                      to={id ? `/college/${id}` : '#'} 
+                      className="w-full bg-primary text-secondary py-5 rounded-2xl font-black text-center block border-2 border-secondary hover:bg-secondary hover:text-primary transition-all shadow-xl hover:shadow-indigo-200 uppercase tracking-widest text-xs"
+                    >
+                      View Campus & Details →
+                    </Link>
                   </div>
-                )}
-                <div>
-                  <h3 className="text-xl md:text-2xl font-extrabold text-slate-800 mb-4 font-serif leading-tight group-hover:text-secondary transition-colors">{typeof univ === 'object' ? univ.name : univ}</h3>
-                  <div className="flex flex-wrap gap-4">
-                    <span className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                      <CheckCircle className="w-4 h-4 text-secondary" /> Industrial Connect
-                    </span>
-                    <span className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                      <CheckCircle className="w-4 h-4 text-secondary" /> Research Driven
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Global CTA */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="mt-32 p-12 md:p-20 bg-gradient-to-br from-primary to-[#0f172a] rounded-[4rem] text-center text-white relative overflow-hidden shadow-2xl"
-        >
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-          <div className="relative z-10">
-            <Award className="w-20 h-20 text-secondary mx-auto mb-8 animate-bounce" />
-            <h2 className="text-3xl md:text-6xl font-black mb-8 font-serif leading-tight">Start Your Global Career Today</h2>
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 font-medium">
-              Join 5000+ Indian students who have realized their dreams in Russia. Get complete support from documents to departure.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-secondary hover:bg-[#ca8a04] text-primary px-12 py-5 rounded-full font-black text-xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">
-                Get Free Counseling
-              </button>
-              <button className="bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-white px-12 py-5 rounded-full font-black text-xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">
-                Download Brochure
-              </button>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       <LeadForm />

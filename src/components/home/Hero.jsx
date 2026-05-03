@@ -25,7 +25,7 @@ const Hero = () => {
           className="w-full lg:w-1/2 text-center lg:text-left space-y-10"
         >
           <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}>
-            <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-primary/5 text-primary text-xs font-black tracking-[0.3em] mb-8 border border-primary/10 uppercase">
+            <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-primary/5 text-primary text-xs font-black tracking-[0.3em] mb-8 border border-primary/30 uppercase">
               <Globe className="w-4 h-4 text-secondary" />
               Expert Education Consultancy
             </div>
@@ -49,13 +49,15 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4"
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
           >
-            <Link 
-              to="/contact" 
+            <button 
+              onClick={() => {
+                document.getElementById('counseling')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-primary text-white font-black text-sm hover:scale-105 transition-all shadow-[0_20px_50px_rgba(30,27,75,0.2)] flex items-center justify-center gap-3 group uppercase tracking-[0.2em]"
             >
               Enroll Now
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </Link>
+            </button>
             
             <a 
               href="#services"

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, GraduationCap, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +27,6 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Founder', path: '/founder' },
   ];
 
   const collegeLinks = [
@@ -37,36 +37,45 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl border-b border-primary/60 shadow-[0_8px_32px_rgba(0,0,0,0.1)] py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-secondary p-1.5 rounded-lg group-hover:rotate-12 transition-transform duration-300">
-              <GraduationCap className="h-6 w-6 text-primary" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src="/images/logo.png" 
+              alt="Logo" 
+              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="flex flex-col">
+              <span className={`text-lg md:text-xl font-black tracking-tight leading-none ${isScrolled ? 'text-primary' : 'text-primary'}`}>
+                TN ALL EDUCATIONAL
+              </span>
+              <span className="text-[10px] font-black tracking-[0.2em] text-secondary leading-none mt-1">
+                CONSULTANCY
+              </span>
             </div>
-            <span className={`text-xl md:text-2xl font-black tracking-tighter ${isScrolled ? 'text-primary' : 'text-primary'}`}>TNAEC</span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-10 items-center">
+          <div className="hidden md:flex space-x-6 items-center">
             {mainLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-xs font-black uppercase tracking-widest hover:text-secondary transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full ${
-                  location.pathname === link.path ? 'text-secondary after:w-full' : 'text-slate-700'
+                className={`text-xs font-black uppercase tracking-widest px-5 py-2.5 border-2 rounded-xl transition-all ${
+                  location.pathname === link.path ? 'bg-primary text-secondary border-primary' : 'text-primary border-primary hover:bg-slate-50'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-
+ 
             {/* Dropdown */}
             <div className="relative group">
               <button
                 onMouseEnter={() => setIsDropdownOpen(true)}
-                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest hover:text-secondary transition-all ${
-                  collegeLinks.some(l => l.path === location.pathname) ? 'text-secondary' : 'text-slate-700'
+                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest px-5 py-2.5 border-2 border-primary rounded-xl transition-all ${
+                  collegeLinks.some(l => l.path === location.pathname) ? 'bg-primary text-secondary' : 'text-primary hover:bg-slate-50'
                 }`}
               >
                 Top Programs
@@ -80,7 +89,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     onMouseLeave={() => setIsDropdownOpen(false)}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 py-6 overflow-hidden"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-2 border-primary py-6 overflow-hidden"
                   >
                     {collegeLinks.map((link) => (
                       <Link
@@ -95,11 +104,11 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </div>
-
+ 
             <Link
               to="/contact"
-              className={`text-xs font-black uppercase tracking-widest hover:text-secondary transition-all ${
-                location.pathname === '/contact' ? 'text-secondary' : 'text-slate-700'
+              className={`text-xs font-black uppercase tracking-widest px-5 py-2.5 border-2 rounded-xl transition-all ${
+                location.pathname === '/contact' ? 'bg-primary text-secondary border-primary' : 'text-primary border-primary hover:bg-slate-50'
               }`}
             >
               Contact
@@ -108,12 +117,16 @@ const Navbar = () => {
             <button
               onClick={() => {
                 if (window.location.pathname === '/') {
-                  document.getElementById('counseling')?.scrollIntoView({ behavior: 'smooth' });
+                  const element = document.getElementById('counseling');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 } else {
-                  window.location.href = '/#counseling';
+                  // Navigate to home with hash
+                  navigate('/#counseling');
                 }
               }}
-              className="bg-primary text-secondary px-8 py-3.5 rounded-2xl font-black border-2 border-secondary hover:bg-secondary hover:text-primary transition-all shadow-[0_10px_20px_rgba(30,27,75,0.1)] hover:shadow-[0_15px_30px_rgba(234,179,8,0.2)] hover:-translate-y-0.5 uppercase text-[10px] tracking-[0.2em]"
+              className="bg-primary text-secondary px-8 py-3.5 rounded-2xl font-black border-2 border-primary hover:bg-secondary hover:text-primary transition-all shadow-[0_10px_20px_rgba(30,27,75,0.1)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 uppercase text-[10px] tracking-[0.2em]"
             >
               Enroll Now
             </button>

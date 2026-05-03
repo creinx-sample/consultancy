@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const GlobalPartners = () => {
   const topRussiaColleges = [
-    { name: "I.M Sechenov First Moscow State Medical University", type: "Medical" },
-    { name: "Moscow Institute of Physics and Technology (MIPT)", type: "Engineering" },
-    { name: "Kazan State Medical University", type: "Medical" },
-    { name: "Moscow State Aviation Institute (MAI)", type: "Engineering" }
+    { id: "sechenov-moscow", name: "I.M Sechenov First Moscow State Medical University", type: "Medical" },
+    { id: "mipt-moscow", name: "Moscow Institute of Physics and Technology (MIPT)", type: "Engineering" },
+    { id: "kazan-state", name: "Kazan State Medical University", type: "Medical" },
+    { id: "mai-moscow", name: "Moscow State Aviation Institute (MAI)", type: "Engineering" }
   ];
 
   return (
@@ -28,7 +28,7 @@ const GlobalPartners = () => {
           </div>
           <Link 
             to="/russia-colleges" 
-            className="group flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary transition-all shadow-lg shrink-0"
+            className="group flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary transition-all shadow-lg shrink-0 border-2 border-secondary"
           >
             Explore All Russian Universities
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -43,16 +43,16 @@ const GlobalPartners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all group relative overflow-hidden"
+              className="bg-white p-8 rounded-[2rem] border-2 border-secondary shadow-md hover:shadow-2xl hover:bg-slate-50 transition-all group relative overflow-hidden"
             >
-              <Link to={`/college/${encodeURIComponent(college.name)}`} className="absolute inset-0 z-10" aria-label={`View details for ${college.name}`} />
-              <div className="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+              <Link to={`/college/${college.id}`} className="absolute inset-0 z-10" aria-label={`View details for ${college.name}`} />
+              <div className="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors border-2 border-transparent group-hover:border-secondary">
                 <GraduationCap className="w-6 h-6" />
               </div>
-              <h4 className="text-lg font-bold text-slate-800 mb-4 leading-tight group-hover:text-primary transition-colors">
+              <h4 className="text-lg font-bold text-slate-800 mb-4 leading-tight group-hover:text-primary transition-colors font-serif">
                 {college.name}
               </h4>
-              <div className="inline-block px-3 py-1 rounded-full bg-slate-100 text-secondary text-[10px] font-black uppercase tracking-widest relative z-20">
+              <div className="inline-block px-3 py-1 rounded-full bg-slate-100 text-secondary text-[10px] font-black uppercase tracking-widest relative z-20 border border-secondary/10">
                 {college.type}
               </div>
             </motion.div>

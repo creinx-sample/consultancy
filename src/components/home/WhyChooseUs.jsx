@@ -29,11 +29,11 @@ const WhyChooseUs = () => {
           {/* Left Content */}
           <div className="w-full lg:w-1/2">
             <h2 className="text-secondary font-bold tracking-widest text-sm uppercase mb-2">Why Choose Us</h2>
-            <h3 className="text-4xl font-extrabold text-primary mb-6 leading-tight">
+            <h3 className="text-4xl font-extrabold text-primary mb-6 leading-tight uppercase font-serif">
               A Legacy of Trust <br/> in Education.
             </h3>
             <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
-              Join thousands of students and parents who have trusted TNAEC for their academic and career journeys. We don't just find you a college; we find you the right fit.
+              Join thousands of students and parents who have trusted TN ALL EDUCATIONAL CONSULTANCY for their academic and career journeys. We don't just find you a college; we find you the right fit.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
                     <CheckCircle2 className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-primary mb-1">{point.title}</h4>
+                    <h4 className="text-lg font-bold text-primary mb-1 uppercase tracking-tight">{point.title}</h4>
                     <p className="text-slate-500 text-sm font-medium">{point.description}</p>
                   </div>
                 </motion.div>
@@ -60,9 +60,9 @@ const WhyChooseUs = () => {
 
           {/* Right Visual/Image Area */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-6 transform scale-105 z-0"></div>
+            <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-6 transform scale-105 z-0 border-2 border-primary/10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670" 
               alt="Our Team" 
               className="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover border-8 border-white"
             />

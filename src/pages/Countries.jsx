@@ -38,22 +38,22 @@ const Countries = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-[4rem] p-10 md:p-16 shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col gap-12 hover:shadow-indigo-100/50 transition-all group overflow-hidden relative"
+              className="bg-white rounded-[4rem] p-10 md:p-16 shadow-2xl shadow-slate-200/50 border border-slate-200 flex flex-col gap-12 hover:shadow-indigo-100/50 transition-all group overflow-hidden relative h-full"
             >
               <div className="absolute top-0 right-0 w-48 h-48 bg-secondary/5 rounded-bl-[100px] border-l border-b border-secondary/10" />
               
               <div className="flex flex-col sm:flex-row items-center gap-12 relative z-10">
-                <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-[12px] border-slate-50 flex-shrink-0 shadow-inner group-hover:border-secondary/20 transition-all duration-500">
+                <div className="w-56 h-56 sm:w-60 sm:h-60 rounded-full overflow-hidden border-[12px] border-slate-50 flex-shrink-0 shadow-inner group-hover:border-secondary/20 transition-all duration-500">
                   <img 
                     src={dest.image} 
                     alt={dest.country} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   />
                 </div>
-                <div className="flex-grow text-center sm:text-left">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-primary mb-6 font-serif flex items-center justify-center sm:justify-start gap-4 pr-1">
-                    <span className="text-secondary"><MapPin className="w-8 h-8 md:w-10 md:h-10" /></span>
-                    {dest.country}
+                <div className="flex-grow text-center sm:text-left min-w-0">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-primary mb-6 font-serif flex items-center justify-center sm:justify-start gap-4 pr-1 flex-wrap">
+                    <span className="text-secondary shrink-0"><MapPin className="w-8 h-8 md:w-10 md:h-10" /></span>
+                    <span className="break-words">{dest.country}</span>
                   </h3>
                   <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                     {dest.highlights.map((point, idx) => (
@@ -65,16 +65,16 @@ const Countries = () => {
                   </div>
                 </div>
               </div>
-
+ 
               {/* Specific Universities Preview */}
-              <div className="bg-slate-50/80 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative z-10">
+              <div className="bg-slate-50/80 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative z-10 flex-grow flex flex-col">
                 <h4 className="flex items-center gap-3 text-primary font-black text-xl mb-10 uppercase tracking-widest border-b border-slate-200 pb-6 font-serif">
                   <GraduationCap className="text-secondary w-8 h-8" />
                   Premier Institutions
                 </h4>
                 
                 {dest.medicalUniversities && (
-                  <div className="mb-10">
+                  <div className="mb-10 flex-grow">
                     <h5 className="flex items-center gap-2 text-slate-400 font-black text-xs mb-6 uppercase tracking-[0.2em]">
                       <Stethoscope className="w-5 h-5 text-secondary" />
                       Leading Medical Hubs
@@ -84,7 +84,7 @@ const Countries = () => {
                         <Link 
                           key={idx} 
                           to={`/college/${univ.id}`}
-                          className="flex gap-4 items-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-secondary/30 transition-all group/univ"
+                          className="flex gap-4 items-center p-4 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-secondary/30 transition-all group/univ"
                         >
                           {typeof univ === 'object' && univ.images && univ.images[0] ? (
                             <img src={univ.images[0]} alt={univ.name} className="w-14 h-14 rounded-xl object-cover shrink-0" />
@@ -97,10 +97,10 @@ const Countries = () => {
                     </div>
                   </div>
                 )}
-
+ 
                 <Link 
                   to={dest.country === "Russia" ? "/russia-colleges" : dest.country === "Georgia" ? "/georgia-colleges" : "#"}
-                  className="w-full bg-primary text-secondary py-5 rounded-3xl font-black text-center block border-2 border-secondary hover:bg-secondary hover:text-primary transition-all shadow-xl hover:shadow-indigo-200 uppercase tracking-[0.2em] text-sm"
+                  className="w-full bg-primary text-secondary py-5 rounded-3xl font-black text-center block border-2 border-secondary hover:bg-secondary hover:text-primary transition-all shadow-xl hover:shadow-indigo-200 uppercase tracking-[0.2em] text-sm mt-auto"
                 >
                   Explore All {dest.country} Universities →
                 </Link>

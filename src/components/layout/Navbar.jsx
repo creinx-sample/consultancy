@@ -70,10 +70,14 @@ const Navbar = () => {
               </Link>
             ))}
  
-            {/* Dropdown */}
-            <div className="relative group">
+            {/* Dropdown Container */}
+            <div 
+              className="relative"
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
               <button
                 onMouseEnter={() => setIsDropdownOpen(true)}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest px-5 py-2.5 border-2 border-primary rounded-xl transition-all ${
                   collegeLinks.some(l => l.path === location.pathname) ? 'bg-primary text-secondary' : 'text-primary hover:bg-slate-50'
                 }`}
@@ -85,21 +89,23 @@ const Navbar = () => {
               <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-2 border-primary py-6 overflow-hidden"
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 z-[60]" // pt-2 acts as the bridge
                   >
-                    {collegeLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        to={link.path}
-                        className="block px-8 py-3.5 text-xs font-black uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-primary transition-all"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
+                    <div className="bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-2 border-primary py-6 overflow-hidden">
+                      {collegeLinks.map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.path}
+                          onClick={() => setIsDropdownOpen(false)}
+                          className="block px-8 py-3.5 text-xs font-black uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-primary transition-all"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

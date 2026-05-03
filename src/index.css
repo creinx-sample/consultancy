@@ -93,10 +93,10 @@
       @apply px-4;
     }
     .text-dynamic-h1 {
-      @apply text-4xl !important;
+      @apply !text-4xl;
     }
     .text-dynamic-p {
-      @apply text-base !important;
+      @apply !text-base;
     }
     .section-spacing {
       @apply py-12;
@@ -113,7 +113,7 @@
       @apply px-8;
     }
     .text-dynamic-h1 {
-      @apply text-6xl !important;
+      @apply !text-6xl;
     }
     .section-spacing {
       @apply py-20;
@@ -126,7 +126,7 @@
       @apply px-12 lg:px-20;
     }
     .text-dynamic-h1 {
-      @apply text-8xl !important;
+      @apply !text-8xl;
     }
     .section-spacing {
       @apply py-32;

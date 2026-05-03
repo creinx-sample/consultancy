@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, ArrowLeft, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowLeft, Send, CheckCircle2, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = () => {
@@ -90,29 +90,33 @@ const Contact = () => {
                 iconColor: "text-secondary" 
               },
               { 
-                icon: Mail, 
-                title: "Email Us", 
-                detail: "uniquetours.packager@gmail.com", 
+                icon: Star, 
+                title: "Google Review", 
+                detail: "Rated 4.9/5 by 500+ Students", 
+                link: "https://www.google.com/search?q=TN+ALL+EDUCATIONAL+CONSULTANCY+Karur+reviews",
                 color: "bg-emerald-50", 
                 iconColor: "text-secondary" 
               }
             ].map((item, i) => (
-              <motion.div 
+              <motion.a 
                 key={i}
+                href={item.link || (item.title === "Call Us" ? "tel:+919597371949" : "#")}
+                target={item.link ? "_blank" : undefined}
+                rel={item.link ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className={`${item.color} p-8 rounded-[2rem] border border-white/50 shadow-xl shadow-slate-200/50 flex items-start gap-6 group hover:-translate-y-1 transition-all duration-300`}
+                className={`${item.color} p-8 rounded-[2rem] border border-white/50 shadow-xl shadow-slate-200/50 flex items-start gap-6 group hover:-translate-y-1 transition-all duration-300 cursor-pointer w-full text-left`}
               >
                 <div className={`p-4 rounded-2xl bg-white shadow-sm transition-transform group-hover:scale-110`}>
-                  <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+                  <item.icon className={`w-6 h-6 ${item.iconColor} ${item.title === "Google Review" ? 'fill-current' : ''}`} />
                 </div>
                 <div>
                   <h4 className="text-xl font-black text-slate-800 mb-2 font-serif">{item.title}</h4>
                   <p className="text-slate-600 font-bold leading-tight">{item.detail}</p>
                   {item.subDetail && <p className="text-slate-400 text-xs font-bold mt-1 uppercase tracking-wider">{item.subDetail}</p>}
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
             
             <div className="bg-white p-8 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100">

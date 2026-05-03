@@ -24,7 +24,7 @@ const Hero = () => {
           }}
           className="w-full lg:w-1/2 text-center lg:text-left space-y-10"
         >
-          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}>
+          <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>
             <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-primary/5 text-primary text-xs font-black tracking-[0.3em] mb-8 border border-primary/30 uppercase">
               <Globe className="w-4 h-4 text-secondary" />
               Expert Education Consultancy
@@ -47,7 +47,7 @@ const Hero = () => {
 
           <motion.div 
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4"
-            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}
           >
             <button 
               onClick={() => {
@@ -87,29 +87,29 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Visual Content */}
+        {/* Visual Content - Optimized for Tablet/Mobile */}
         <motion.div 
           className="w-full lg:w-1/2 relative hidden lg:block"
-          initial={{ opacity: 0, x: 50, scale: 0.9 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4, type: "spring", stiffness: 100 }}
         >
           <div className="relative">
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] z-0"></div>
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px] z-0"></div>
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[60px] z-0"></div>
             
             <div className="relative z-10 p-4 bg-white rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-slate-50 rotate-3 transform hover:rotate-0 transition-transform duration-700">
               <img 
                 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670" 
                 alt="Students Collaboration" 
-                className="w-full h-[550px] object-cover rounded-[3rem]"
+                className="w-full h-[400px] xl:h-[550px] object-cover rounded-[3rem]"
               />
               
-              {/* Floating Element */}
+              {/* Floating Element - Responsive Hidden on small screens */}
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-8 bottom-20 bg-white p-6 rounded-3xl shadow-2xl border border-slate-50 z-20"
+                className="absolute -right-8 bottom-20 bg-white p-6 rounded-3xl shadow-2xl border border-slate-50 z-20 hidden xl:flex"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
@@ -117,7 +117,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <span className="block text-xs font-black text-slate-400 uppercase tracking-widest">Global Partners</span>
-                    <span className="text-xl font-black text-primary">120+ Universities</span>
+                    <span className="text-xl font-black text-primary">Elite Institutions</span>
                   </div>
                 </div>
               </motion.div>

@@ -84,3 +84,66 @@
     scrollbar-width: none;
   }
 }
+
+/* Global Responsive Refinements */
+@layer utilities {
+  /* Mobile Optimization (< 768px) */
+  @media (max-width: 767px) {
+    .container-wide {
+      @apply px-4;
+    }
+    .text-dynamic-h1 {
+      @apply text-4xl !important;
+    }
+    .text-dynamic-p {
+      @apply text-base !important;
+    }
+    .section-spacing {
+      @apply py-12;
+    }
+    /* Reduce intense blurs on mobile for performance */
+    .glass {
+      backdrop-filter: blur(8px);
+    }
+  }
+
+  /* Tablet Optimization (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container-wide {
+      @apply px-8;
+    }
+    .text-dynamic-h1 {
+      @apply text-6xl !important;
+    }
+    .section-spacing {
+      @apply py-20;
+    }
+  }
+
+  /* Laptop & Desktop Optimization (> 1024px) */
+  @media (min-width: 1024px) {
+    .container-wide {
+      @apply px-12 lg:px-20;
+    }
+    .text-dynamic-h1 {
+      @apply text-8xl !important;
+    }
+    .section-spacing {
+      @apply py-32;
+    }
+  }
+}
+
+/* Custom 3D Animation Utilities for Preloader */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Fix for Safari backdrop-filter issues */
+.glass, .glass-dark {
+  -webkit-backdrop-filter: blur(12px);
+}

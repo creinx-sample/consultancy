@@ -40,17 +40,17 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl border-b border-primary/60 shadow-[0_8px_32px_rgba(0,0,0,0.1)] py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <img 
               src="/images/logo.png" 
               alt="Logo" 
-              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className={`text-lg md:text-xl font-black tracking-tight leading-none ${isScrolled ? 'text-primary' : 'text-primary'}`}>
+              <span className={`text-sm sm:text-base md:text-lg lg:text-xl font-black tracking-tight leading-none ${isScrolled ? 'text-primary' : 'text-primary'}`}>
                 TN ALL EDUCATIONAL
               </span>
-              <span className="text-[10px] font-black tracking-[0.2em] text-secondary leading-none mt-1">
+              <span className="text-[8px] sm:text-[10px] font-black tracking-[0.1em] sm:tracking-[0.2em] text-secondary leading-none mt-1">
                 CONSULTANCY
               </span>
             </div>

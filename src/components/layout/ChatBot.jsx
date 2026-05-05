@@ -68,7 +68,7 @@ const ChatBot = () => {
       {/* Floating Trigger */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-6 z-50 bg-primary text-secondary p-4 rounded-full shadow-[0_15px_45px_rgba(30,27,75,0.4)] border-2 border-secondary hover:scale-110 active:scale-95 transition-all group overflow-hidden"
+        className="fixed bottom-28 right-6 z-50 bg-primary text-secondary p-4 rounded-full shadow-[0_15px_45px_rgba(30,27,75,0.4)] border-2 border-secondary hover:scale-110 active:scale-95 transition-all group overflow-hidden"
       >
         <div className="absolute inset-0 bg-secondary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
         <MessageSquare className="w-8 h-8 relative z-10" />
@@ -84,7 +84,7 @@ const ChatBot = () => {
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-24 right-6 z-50 w-[400px] h-[650px] bg-white rounded-[3.5rem] shadow-[0_40px_120px_rgba(30,27,75,0.5)] border border-slate-100 overflow-hidden flex flex-col"
+            className="fixed bottom-28 right-6 z-50 w-[90vw] sm:w-[400px] h-[650px] max-h-[80vh] bg-white rounded-[3.5rem] shadow-[0_40px_120px_rgba(30,27,75,0.5)] border border-slate-100 overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="bg-primary p-8 text-white flex justify-between items-center relative">

@@ -1,19 +1,25 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, MapPin, CheckCircle, GraduationCap, Cpu, Book, Stethoscope, Leaf, Scale, Globe } from 'lucide-react';
 import { tnUniversitiesData } from '../data/collegesData';
 import LeadForm from '../components/home/LeadForm';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../components/layout/SEO';
 
 const TamilNaduColleges = () => {
-  const [activeCategory, setActiveCategory] = useState(tnUniversitiesData[0].category);
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get('category') || tnUniversitiesData[0].category;
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (searchParams.get('category')) {
+      setActiveCategory(searchParams.get('category'));
+    }
+  }, [searchParams]);
 
-  const activeData = tnUniversitiesData.find(cat => cat.category === activeCategory);
+  const activeData = tnUniversitiesData.find(cat => cat.category === activeCategory) || tnUniversitiesData[0];
 
   const iconMap = {
     Cpu: Cpu,
@@ -47,15 +53,20 @@ const itemVariants = {
       exit={{ opacity: 0 }}
       className="pt-24 min-h-screen bg-slate-50"
     >
+      <SEO 
+        title={`Top ${activeCategory} Universities in Tamil Nadu`}
+        description={`Explore the best ${activeCategory} colleges in Tamil Nadu including ${activeData.colleges.slice(0, 5).map(c => c.name).join(', ')}. Get expert admission guidance from TNAEC.`}
+        keywords={`${activeCategory} colleges TN, ${activeData.colleges.map(c => c.name).join(', ')}, direct admission TN, engineering admission consultancy`}
+      />
       {/* Header */}
         <div className="bg-primary py-24 text-center relative overflow-hidden">
-        <div className="absolute top-10 left-10 z-20">
+        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white font-black transition-all group py-2 px-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5"
+            className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] uppercase tracking-[0.2em]">Back</span>
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+            <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
           </Link>
         </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />

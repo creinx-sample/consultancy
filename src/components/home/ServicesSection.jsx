@@ -18,7 +18,7 @@ const ServicesSection = () => {
       icon: Cpu,
       bg: "bg-orange-50",
       color: "text-secondary",
-      path: "/tn-colleges"
+      path: "/tn-colleges?category=Engineering"
     },
     {
       title: "Study in Russia",
@@ -34,7 +34,7 @@ const ServicesSection = () => {
       icon: Book,
       bg: "bg-indigo-50",
       color: "text-indigo-600",
-      path: "/tn-colleges"
+      path: "/tn-colleges?category=Arts%20%26%20Science"
     }
   ];
 

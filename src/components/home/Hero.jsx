@@ -30,7 +30,7 @@ const Hero = () => {
               Expert Education Consultancy
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-black text-primary leading-[1.1] tracking-tighter font-serif">
+            <h1 className="text-dynamic-h1 font-black text-primary leading-[1.1] tracking-tighter font-serif">
               Lead Your <br/>
               <span className="text-secondary relative">
                 Academic Journey
@@ -40,7 +40,7 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="mt-8 text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+            <p className="mt-8 text-dynamic-p text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
               Join 5,000+ students who secured admissions in elite MBBS and Engineering universities across <span className="text-primary font-black underline decoration-secondary decoration-4">India, Russia, and Georgia</span>.
             </p>
           </motion.div>

@@ -48,7 +48,7 @@ const Navbar = () => {
             />
             <div className="flex flex-col">
               <span className={`text-sm sm:text-base md:text-lg lg:text-xl font-black tracking-tight leading-none ${isScrolled ? 'text-primary' : 'text-primary'}`}>
-                TN ALL EDUCATIONAL
+                TNAEC
               </span>
               <span className="text-[8px] sm:text-[10px] font-black tracking-[0.1em] sm:tracking-[0.2em] text-secondary leading-none mt-1">
                 CONSULTANCY
@@ -57,7 +57,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 items-center">
+          <div className="hidden lg:flex space-x-6 items-center">
             {mainLinks.map((link) => (
               <Link
                 key={link.name}
@@ -139,7 +139,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-primary transition-colors"
@@ -167,7 +167,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-slate-50 overflow-hidden"
+            className="lg:hidden bg-white border-t border-slate-50 overflow-hidden"
           >
             <div className="px-6 pt-8 pb-12 space-y-2">
               {mainLinks.map((link) => (

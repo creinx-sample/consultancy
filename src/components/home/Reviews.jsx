@@ -6,7 +6,7 @@ const initialReviews = [
   {
     name: "Rajesh Kumar",
     location: "Karur",
-    text: "TN ALL EDUCATIONAL CONSULTANCY provided exceptional guidance for my son's MBBS admission. The process was smooth and the counselors were very professional. Highly recommended!",
+    text: "TNAEC provided exceptional guidance for my son's MBBS admission. The process was smooth and the counselors were very professional. Highly recommended!",
     rating: 5,
     date: "2 months ago"
   },
@@ -20,7 +20,7 @@ const initialReviews = [
   {
     name: "Prakash Raj",
     location: "Coimbatore",
-    text: "Excellent support for overseas education. I am now studying in Georgia, all thanks to the TN ALL EDUCATIONAL CONSULTANCY team. They handled everything from documents to visa.",
+    text: "Excellent support for overseas education. I am now studying in Georgia, all thanks to the TNAEC team. They handled everything from documents to visa.",
     rating: 5,
     date: "3 months ago"
   },
@@ -247,7 +247,7 @@ const Reviews = () => {
                     rows="4"
                     value={newReview.text}
                     onChange={(e) => setNewReview({...newReview, text: e.target.value})}
-                    placeholder="Tell us about your journey with TN ALL EDUCATIONAL CONSULTANCY..."
+                    placeholder="Tell us about your journey with TNAEC..."
                     className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-primary outline-none transition-all font-bold text-primary resize-none"
                   />
                 </div>

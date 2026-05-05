@@ -1,13 +1,28 @@
 import { Link } from 'react-router-dom';
-import { MapPin, CheckCircle, GraduationCap, Stethoscope } from 'lucide-react';
+import { MapPin, CheckCircle, GraduationCap, Stethoscope, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { countriesData } from '../data/collegesData';
 import LeadForm from '../components/home/LeadForm';
+import SEO from '../components/layout/SEO';
 
 const Countries = () => {
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="Study MBBS Abroad | Russia, Georgia & More"
+        description="Explore top international medical destinations. TNAEC provides admission guidance for WHO-approved medical universities in Russia and Georgia with affordable fees."
+        keywords="MBBS abroad, study medicine abroad, MBBS in Russia, MBBS in Georgia, international medical universities, TNAEC abroad guidance"
+      />
       <div className="bg-primary py-24 text-center relative overflow-hidden">
+        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+            <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
+          </Link>
+        </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />
         <div className="absolute -left-10 top-0 w-64 h-64 bg-white/5 rounded-full blur-3xl saturate-150" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">

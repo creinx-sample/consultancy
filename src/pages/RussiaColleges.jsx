@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { MapPin, CheckCircle, GraduationCap, Stethoscope, Cpu, Globe, Award, ArrowLeft } from 'lucide-react';
 import { countriesData } from '../data/collegesData';
 import LeadForm from '../components/home/LeadForm';
+import SEO from '../components/layout/SEO';
 
 const RussiaColleges = () => {
   const russiaData = countriesData.find(c => c.country === "Russia");
@@ -14,15 +15,20 @@ const RussiaColleges = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="Study MBBS & Engineering in Russia"
+        description={`Top Russian Universities for Indian students including ${russiaData.medicalUniversities.slice(0, 3).map(u => u.name).join(', ')}. NMC/WHO approved, English medium medical education.`}
+        keywords={`MBBS in Russia, engineering in Russia, ${russiaData.medicalUniversities.map(u => u.name).join(', ')}, ${russiaData.engineeringUniversities.map(u => u.name).join(', ')}, TNAEC Russia`}
+      />
       {/* Header */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
-        <div className="absolute top-10 left-10 z-20">
+        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white font-black transition-all group py-2 px-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5"
+            className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] uppercase tracking-[0.2em]">Back</span>
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+            <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
           </Link>
         </div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px]" />

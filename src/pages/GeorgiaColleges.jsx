@@ -1,28 +1,33 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, CheckCircle, GraduationCap, Stethoscope, Globe, Cpu } from 'lucide-react';
 import { countriesData } from '../data/collegesData';
+import SEO from '../components/layout/SEO';
 
 const GeorgiaColleges = () => {
   const georgiaData = countriesData.find(c => c.country === "Georgia");
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="Study MBBS in Georgia | Top European Universities"
+        description={`Secure your medical seat in Georgia. Top universities including ${georgiaData.medicalUniversities.slice(0, 3).map(u => u.name).join(', ')}. European standards, English medium medical education.`}
+        keywords={`MBBS in Georgia, study in Georgia, ${georgiaData.medicalUniversities.map(u => u.name).join(', ')}, Georgian medical universities, TNAEC Georgia`}
+      />
       {/* Header */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px]" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-[80px]" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="mb-8">
-            <Link 
-              to="/countries" 
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              Back to MBBS Abroad
-            </Link>
-          </div>
+        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+            <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
+          </Link>
+        </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

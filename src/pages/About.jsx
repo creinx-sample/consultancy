@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LeadForm from '../components/home/LeadForm';
+import SEO from '../components/layout/SEO';
 
 const About = () => {
   useEffect(() => {
@@ -11,16 +12,21 @@ const About = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="About Us" 
+        description="Learn more about TNAEC's mission to empower the next generation of healthcare and engineering professionals through ethical guidance."
+        keywords="TNAEC mission, education consultant Karur, ethical admission guidance, TNAEC founder, study abroad consultancy Tamil Nadu"
+      />
       
       {/* Header */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
-        <div className="absolute top-10 left-10 z-20">
+        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white font-black transition-all group py-2 px-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5"
+            className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] uppercase tracking-[0.2em]">Back</span>
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+            <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
           </Link>
         </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />
@@ -30,7 +36,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-extrabold text-white mb-6 font-serif uppercase tracking-tight"
           >
-            About TN ALL EDUCATIONAL CONSULTANCY
+            About TNAEC
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
@@ -53,7 +59,7 @@ const About = () => {
               Empowering the Next <br/> Generation Professionals.
             </h3>
             <p className="text-slate-600 mb-6 leading-relaxed font-medium">
-              TN ALL EDUCATIONAL CONSULTANCY was founded with a single mission: to provide honest and transparent career guidance to students after their 12th standard. We specialized in MBBS abroad and premier Indian engineering colleges to bridge the gap between dreams and reality.
+              TNAEC was founded with a single mission: to provide honest and transparent career guidance to students after their 12th standard. We specialized in MBBS abroad and premier Indian engineering colleges to bridge the gap between dreams and reality.
             </p>
             <p className="text-slate-600 mb-8 leading-relaxed font-medium">
               Over the last decade, we have helped over 5,000 students from across Tamil Nadu and South India find their perfect academic path. Our commitment remains to your success and transparency.

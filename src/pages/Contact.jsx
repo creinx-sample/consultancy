@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, ArrowLeft, Send, CheckCircle2, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '../components/layout/SEO';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,19 +35,24 @@ const Contact = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with TNAEC for expert education counseling. Visit our Karur headquarters or contact us via phone/email."
+        keywords="contact TNAEC, education counselor Karur, TNAEC phone number, TNAEC office location, admission inquiry"
+      />
       {/* Hero Section */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[80px]" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[60px]" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <div className="max-w-7xl mx-auto px-4 mb-8 text-left">
+          <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20 text-left">
             <Link 
               to="/" 
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
+              className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
             >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              Back to Home
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+              <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
             </Link>
           </div>
           <motion.h1 

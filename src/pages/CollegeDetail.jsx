@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { tnUniversitiesData, countriesData } from '../data/collegesData';
 import LeadForm from '../components/home/LeadForm';
+import SEO from '../components/layout/SEO';
 
 const CollegeDetail = () => {
   const { collegeId } = useParams();
@@ -70,16 +71,21 @@ const CollegeDetail = () => {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title={`${college.name} Admission Guidance`}
+        description={`Secure your admission at ${college.name}, ${college.location}. TNAEC provides expert counseling for ${college.courses?.join(', ') || 'various courses'}. Contact us for fees and seat details.`}
+        keywords={`${college.name}, ${college.name} admissions, ${college.name} fees, ${college.location} colleges, TNAEC guidance, ${college.courses?.join(', ')}`}
+      />
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 pt-10">
-        <Link 
-          to={-1} 
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-bold transition-colors group"
-        >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          Back to Listing
-        </Link>
-      </div>
+        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-3 text-white bg-secondary/80 hover:bg-secondary px-6 py-3 rounded-2xl font-black transition-all group border border-white/20 shadow-xl backdrop-blur-md"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+            <span className="text-xs uppercase tracking-[0.2em]">Back to Home</span>
+          </Link>
+        </div>
 
       {/* Hero Section */}
       <section className="py-12">
@@ -164,7 +170,7 @@ const CollegeDetail = () => {
                   }}
                   className="absolute -bottom-6 right-10 bg-white shadow-2xl z-20 overflow-hidden rounded-2xl border-4 border-white"
                 >
-                  <img src={college.images[0]} alt="Campus View" className="w-48 h-32 object-cover" />
+                  <img src={college.images[0]} alt={`${college.name} Campus Overview`} className="w-48 h-32 object-cover" />
                 </motion.div>
               )}
             </motion.div>

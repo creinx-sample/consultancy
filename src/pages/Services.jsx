@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ServicesSection from '../components/home/ServicesSection';
 import LeadForm from '../components/home/LeadForm';
+import SEO from '../components/layout/SEO';
 
 const Services = () => {
   useEffect(() => {
@@ -12,6 +13,11 @@ const Services = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="Services" 
+        description="Explore TNAEC's comprehensive admission services for MBBS abroad and top colleges in India. We handle everything from counseling to visa guidance."
+        keywords="admission services, education counseling, visa guidance, MBBS abroad support, engineering admission assistance, TNAEC services"
+      />
       
       {/* Header */}
       <div className="bg-primary py-24 text-center relative overflow-hidden">
